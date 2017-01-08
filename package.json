@@ -9,6 +9,6 @@
     "url": "https://github.com/andreamangano/confetti-theme-voice"
   },
   "dependencies": {
-    "super-gigi": "^1.12.8"
+    "super-gigi": "1.12.8"
   }
 }
