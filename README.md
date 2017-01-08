@@ -1,6 +1,16 @@
 # Voice Theme
 Default theme for [Confetti](https://github.com/andreamangano/confetti-cli), a tool for enriching your online speaker decks.
 
+## Preview
+
+### Desktop views
+![index-desktop](/screens/index-page-desktop.jpg)
+![slide-desktop](/screens/slide-page-desktop.jpg)
+
+### Mobile views
+![index-mobile](/screens/index-page-mobile.jpg)
+![slide-mobile](/screens/slide-page-mobile.jpg)
+
 ## Install
 It is provided by default when you initialise a new slide deck using [Confetti CLI](https://github.com/andreamangano/confetti-cli).
 
