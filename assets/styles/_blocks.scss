@@ -558,6 +558,11 @@
 
   &__item {
     @include grid-column(4, true);
+    
+    &--index {
+      border-left: 1px solid $color-neutral-high;
+      border-right: 1px solid $color-neutral-high;
+    }
 
     &--start {
       background-color: $color-primary;
