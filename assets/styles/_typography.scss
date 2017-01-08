@@ -24,6 +24,15 @@ h6 {
 
 p {
   @include adagio;
+
+  code {
+    padding: rem-calc(3) $h-unit / 2;
+    background-color: $color-neutral-lower;
+    color: $color-neutral-high;
+    line-height: 1;
+    font-size: 90%;
+    border-radius: 3px;
+  }
 }
 
 small {
@@ -41,5 +50,6 @@ a {
 pre {
   background-color: $color-neutral-lower;
   padding: $v-unit $h-unit;
+  overflow-y: auto;
 }
 
