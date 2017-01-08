@@ -49,7 +49,7 @@ themeConfig:
 ```
 
 ## Third party libraries
-* [Super GiGi](https://github.com/Objectway/super-gigi) (for grid layout).
+* [Super GiGi](https://github.com/Objectway/super-gigi) (for the layout grid).
 
 ## Copyright
 Theme designed and developed by [Andrea Mangano](https://github.com/andreamangano), powered by [Confetti](https://github.com/andreamangano/confetti-cli).
