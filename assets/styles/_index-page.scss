@@ -8,6 +8,7 @@
 
   &__content {
     @include grid-row();
+    padding-bottom: $v-unit * 3;
   }
 
   &__main {
@@ -47,7 +48,7 @@
   }
 
   &__author {
-    padding: $v-unit * 2 0;
+    padding: $v-unit * 2 0 0;
   }
 
   &__controls {
