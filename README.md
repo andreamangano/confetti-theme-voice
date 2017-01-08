@@ -23,7 +23,7 @@ git pull
 npm install
 ```
 
-## Uninstal
+## Uninstall
 For removing the theme from your current slide deck just run the following commands:
 
 ``` bash
