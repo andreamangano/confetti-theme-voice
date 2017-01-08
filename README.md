@@ -4,7 +4,8 @@ Default theme for [Confetti](https://github.com/andreamangano/confetti-cli), a t
 ## Install
 It is provided by default when you initialise a new slide deck using [Confetti CLI](https://github.com/andreamangano/confetti-cli).
 
-Execute the clone command under your Confetti `` deck folder `` whether it wasn't present inside the `` path-to-your-deck/themes/ `` folder:
+Execute the `` clone `` command under your Confetti `` deck folder `` whether it
+ wasn't present inside the `` path-to-your-deck/themes/ `` folder:
 
 ``` bash
 https://github.com/andreamangano/confetti-theme-voice.git themes/voice
