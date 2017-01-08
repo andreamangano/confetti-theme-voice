@@ -1,0 +1,14 @@
+{
+  "name": "voice-theme-tangerine",
+  "version": "0.0.1",
+  "description": "Voice theme for Confetti",
+  "author": "Andrea Mangano <andreaman87@gmail.com> (http://andreamangano.com)",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/andreamangano/confetti-theme-voice"
+  },
+  "dependencies": {
+    "super-gigi": "^1.12.8"
+  }
+}

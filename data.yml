@@ -1,0 +1,11 @@
+name: voice
+versione: 1.0
+
+designedBy: Andrea Mangano
+developedBy: Andrea Mangano
+
+config:
+  # Colours palette
+  # You can customize it
+  colors:
+    primary: '#ff004e'

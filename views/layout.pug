@@ -1,0 +1,39 @@
+doctype html
+
+html(lang=lang)
+
+  head
+
+    block meta_title
+      title!= meta.title
+
+    if meta.description
+      meta(name="description" content=meta.description)
+
+    meta(
+      name="viewport"
+      content="width=device-width"
+    )
+
+    meta(charset="utf-8")
+    meta(http-equiv="X-UA-Compatible" content="IE=edge")
+
+    base(href="/")
+    link(href=pathTo.styles + "style.css"
+         rel="stylesheet"
+         type="text/css"
+    )
+    link(href="https://fonts.googleapis.com/css?family=Lato:400,700"
+         rel="stylesheet")
+  body.layout
+
+    .layout__page
+        block page
+
+    footer.layout__footer
+        // Support Confetti, don't remove the Copyright :)
+        .layout__footer-wrapper
+            = "Generated with "
+            a(href="https://github.com/andreamangano/confetti-cli")
+                strong Confetti
+            != "&copy;, an open source project from <strong>Italy.</strong>"

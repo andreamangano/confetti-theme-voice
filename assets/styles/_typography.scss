@@ -1,0 +1,45 @@
+h1 {
+  @include larghissimo;
+}
+
+h2 {
+  @include grave;
+}
+
+h3 {
+  @include largo;
+}
+
+h4 {
+  @include lento;
+}
+
+h5 {
+  @include larghetto;
+}
+
+h6 {
+  @include adagio;
+}
+
+p {
+  @include adagio;
+}
+
+small {
+  @include moderato;
+}
+
+strong {
+  font-weight: 700;
+}
+
+a {
+  color: currentColor;
+}
+
+pre {
+  background-color: $color-neutral-lower;
+  padding: $v-unit $h-unit;
+}
+

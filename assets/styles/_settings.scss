@@ -1,0 +1,18 @@
+/*
+  Get color settings from data.yml
+*/
+$colors: map-get(getThemeConfig(), 'colors');
+
+// Set primary color
+$color-primary: map-get($colors, 'primary');
+
+// Greyscale
+$color-neutral-lowest: #fff;
+$color-neutral-lower: #eff2f7;
+$color-neutral-low: #e0e6ed;
+$color-neutral-medium-low: #dde5eb;
+$color-neutral-medium: #a3a3a3;
+$color-neutral-medium-high: #555;
+$color-neutral-high: #333;
+$color-neutral-higher: #222;
+$color-neutral-highest: #000;
