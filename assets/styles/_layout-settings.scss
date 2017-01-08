@@ -19,12 +19,19 @@ $z-layers: (
 $v-unit: rem-calc(16);
 $h-unit: rem-calc(16);
 
+// Fonts
+$base-font-family: 'Lato', sans-serif;
+
+// Wrappers
+$layout-wrapper: em-calc(1150);
+$layout-slide-wrapper: em-calc(900);
+
 // Grid
 @import 'super-gigi/dist/helpers/functions';
 
 $debug: false;
 $use-dry: false;
-$row-width: em-calc(1980);
+$row-width: $layout-wrapper;
 $column-gutter: rem-calc(32);
 //- $rem-base: 16px;
 $breakpoints: (
@@ -39,10 +46,3 @@ $breakpoints: (
 );
 
 @import 'super-gigi/dist/main';
-
-// Fonts
-$base-font-family: 'Lato', sans-serif;
-
-// Wrappers
-$layout-wrapper: em-calc(1150);
-$layout-slide-wrapper: em-calc(900);
