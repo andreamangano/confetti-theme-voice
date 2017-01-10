@@ -8,7 +8,8 @@ block page
                   .deck-preview__content
                       if author.picture
                         .deck-preview__cover
-                            .deck-preview__cover-image(style="background-image: url("+pathTo.covers + author.picture+");")
+                            .deck-preview__cover-image(
+                            style="background-image: url("+paths.to.deckImages + author.picture+");")
                       .deck-preview__info
                           .deck-preview__author!= author.name + ': '
                           a.deck-preview__title(href="/")!= title
@@ -55,7 +56,7 @@ block page
                                 - var percentage = (sliderNav.current.index * 100) / sliderNav.total
                                 .status-bar__percentage(style="width:" + percentage + "%;")
                   .slide-page__cover
-                       img.slide-page__cover-image(src=pathTo.covers + slide.cover)
+                       img.slide-page__cover-image(src=slide.cover.format.original)
 
           if slide.description
             .slide-page__main-content

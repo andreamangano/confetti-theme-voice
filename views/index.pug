@@ -1,7 +1,7 @@
 extends layout
 
 block page
-    - var coverStyle = cover ? "background-image: url(" + pathTo.covers + cover + ");" : ""
+    - var coverStyle = cover ? "background-image: url(" + paths.to.deckImages + cover + ");" : ""
     - var slidesTranslations = slides.length > 1 ? translations.slides : translations.slide
 
     .index-page
@@ -13,7 +13,7 @@ block page
                         .hero__author
                             if author.picture
                                 .hero__author-picture
-                                    img.hero__author-picture-image(src=pathTo.covers + author.picture)
+                                    img.hero__author-picture-image(src=paths.to.deckImages + author.picture)
                             .hero__author-name!= author.name + ":"
 
                         if categories
@@ -73,7 +73,7 @@ block page
                             .author__content
                                 if author.picture
                                   .author__picture
-                                    img.author__picture-image(src=pathTo.covers + author.picture)
+                                    img.author__picture-image(src=paths.to.deckImages + author.picture)
                                 .author__info
                                   h4.author__name!= author.name
 
@@ -108,7 +108,9 @@ block page
                                             .slide-preview__cover
                                                 .slide-preview__cover-overlay
                                                 .slide-preview__index=translations.slide + " " + slide.index
-                                                img.slide-preview__cover-image(src=pathTo.covers + slide.cover)
+                                                img.slide-preview__cover-image(
+                                                    src=slide.cover.format.small
+                                                )
                                             .slide-preview__text
                                                 h4.slide-preview__title!=slide.title
 
