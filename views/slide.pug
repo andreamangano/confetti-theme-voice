@@ -1,6 +1,7 @@
 extends layout
 
 block page
+
    .slide-page
       header.slide-page__header
           .slide-page__header-wrapper
@@ -62,3 +63,7 @@ block page
             .slide-page__main-content
                 .slide-page__main-content-wrapper
                     .slide-page__description!= slide.description
+
+   script(type='text/javascript').
+       var navigation = !{JSON.stringify(sliderNav)};
+   script(type="text/javascript" src=paths.to.javascript + 'slide.js')
