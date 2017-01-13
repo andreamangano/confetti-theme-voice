@@ -61,7 +61,11 @@
 
   &__description {
     color: $color-neutral-medium-high;
-    &, p {}
+    &, p {
+      //&::first-letter {
+      //  color: red;
+      //}
+    }
   }
 
   &__start-button {
@@ -494,8 +498,8 @@
 
   &__cover-image {
     display: block;
-    width: rem-calc(80);
-    height: rem-calc(80);
+    width: rem-calc(60);
+    height: rem-calc(60);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -503,19 +507,23 @@
 
   &__info {
     @include grid-column(auto, true);
-    padding: $v-unit / 2 0;
+    padding: $v-unit / 4 $h-unit $v-unit / 2 0;
     justify-content: center;
   }
 
   &__author {
-    @include lento;
+    @include andante;
     color: $color-neutral-medium;
+    line-height: 1;
+    display: none;
+    @include media-query(medium) {
+      display: block;
+    }
   }
 
   &__title {
-    @include largo;
+    @include lento;
     color: $color-neutral-lowest;
-    margin-top: $v-unit / 4;
     display: block;
     text-decoration: none;
   }
@@ -538,20 +546,12 @@
     @include largo;
     color: $color-neutral-lowest;
   }
-
-  &__counter-text {
-    @include moderato;
-    margin-top: $v-unit / 4;
-    color: $color-neutral-medium;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    text-decoration: none;
-  }
 }
 //---------
 // CONTROLS
 //---------
 .controls {
+  background-color: $color-neutral-highest;
   color: $color-neutral-lowest;
 
   &__content {
@@ -611,6 +611,7 @@
     font-weight: bold;
   }
 }
+
 //-----------
 // STATUS BAR
 //-----------
