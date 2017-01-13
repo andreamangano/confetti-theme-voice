@@ -167,7 +167,7 @@
   }
 
   &__author-picture {
-    width: rem-calc(120);
+    width: rem-calc(100);
     margin-bottom: $v-unit;
     display: none;
 
@@ -450,13 +450,15 @@
   }
 
   &__name {
+    @include lento;
     margin: 0;
   }
 
   &__role {
-    @include andante;
+    @include larghetto;
     color: $color-neutral-medium-high;
     margin-top: $v-unit / 4;
+    line-height: 1;
   }
 
   &__description {
