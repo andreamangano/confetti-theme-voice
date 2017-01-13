@@ -28,7 +28,7 @@
 }
 
 @mixin lento {
-  $font-size: ('xxsmall': 16, 'medium': 16, 'large': 18);
+  $font-size: ('xxsmall': 16, 'medium': 18, 'large': 18);
   @include responsive-typo($font-size);
   font-weight: 500;
   line-height: 1.2;
