@@ -2,6 +2,9 @@ extends layout
 
 block page
 
+   //-
+      button(type="button" onclick="toggleFullScreen()") Fullscreen
+
    .slide-page
       header.slide-page__header
           .slide-page__header-wrapper
@@ -16,8 +19,11 @@ block page
                           a.deck-preview__title(href="/")!= title
                       .deck-preview__slides
                         .deck-preview__counter
-                            .deck-preview__counter-value= sliderNav.total
-                            .deck-preview__counter-text= translations.slides
+                            .deck-preview__counter-value="#" + sliderNav.current.data.index
+                            a.deck-preview__counter-text(href="/")
+                                =sliderNav.total
+                                = " "
+                                =translations.slides
 
       main.slide-page__main
           .slide-page__main-header
@@ -56,7 +62,7 @@ block page
                             .status-bar
                                 - var percentage = (sliderNav.current.index * 100) / sliderNav.total
                                 .status-bar__percentage(style="width:" + percentage + "%;")
-                  .slide-page__cover
+                  #js-slide.slide-page__cover
                        img.slide-page__cover-image(src=slide.cover.format.original)
 
           if slide.description

@@ -494,8 +494,8 @@
 
   &__cover-image {
     display: block;
-    width: rem-calc(100);
-    height: rem-calc(100);
+    width: rem-calc(80);
+    height: rem-calc(80);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -503,7 +503,7 @@
 
   &__info {
     @include grid-column(auto, true);
-    padding: $v-unit 0;
+    padding: $v-unit / 2 0;
     justify-content: center;
   }
 
@@ -526,14 +526,16 @@
   }
 
   &__counter {
-    padding: $v-unit 0 $v-unit $h-unit;
+    padding: ($v-unit * .75) 0 ($v-unit * .75) $h-unit;
     display: flex;
+    justify-content: center;
     align-items: center;
+    height: 100%;
     flex-direction: column;
   }
 
   &__counter-value {
-    @include grave;
+    @include largo;
     color: $color-neutral-lowest;
   }
 
@@ -543,6 +545,7 @@
     color: $color-neutral-medium;
     text-transform: uppercase;
     letter-spacing: 1px;
+    text-decoration: none;
   }
 }
 //---------
