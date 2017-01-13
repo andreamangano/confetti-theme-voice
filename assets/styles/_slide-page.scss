@@ -37,14 +37,12 @@
     color: $color-neutral-highest;
 
     @include media-query(large) {
-      margin-top: $v-unit;
       color: $color-neutral-lowest;
     }
   }
 
   &__controls {
     @include fixed-bottom;
-    background-color: $color-neutral-highest;
     z-index: z(navbar);
   }
 
@@ -59,6 +57,7 @@
   &__cover-image {
     width: 100%;
     display: block;
+    margin: 0 auto;
   }
 
   &__description {
@@ -69,7 +68,6 @@
     }
 
     p {
-
       &:first-child {
         margin-top: 0;
       }
