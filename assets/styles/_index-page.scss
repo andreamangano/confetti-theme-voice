@@ -53,7 +53,6 @@
 
   &__controls {
     @include fixed-bottom;
-    background-color: $color-neutral-highest;
     z-index: z(navbar);
 
     //@include media-query(medium) {
