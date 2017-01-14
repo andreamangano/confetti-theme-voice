@@ -1,36 +1,43 @@
 h1 {
   @include larghissimo;
+  margin: $v-unit * 1.5 0;
 }
 
 h2 {
   @include grave;
+  margin: $v-unit * 1.5 0;
 }
 
 h3 {
   @include largo;
+  margin: $v-unit 0 ($v-unit / 2);
 }
 
 h4 {
   @include lento;
+  margin: $v-unit / 2 0;
 }
 
 h5 {
   @include larghetto;
+  margin: $v-unit / 2 0;
 }
 
 h6 {
   @include adagio;
+  margin: $v-unit / 2 0;
 }
 
 p {
   @include adagio;
+  margin: $v-unit / 2 0;
 
   code {
+    @include andante;
     padding: rem-calc(3) $h-unit / 2;
     background-color: $color-neutral-lower;
     color: $color-neutral-high;
     line-height: 1;
-    font-size: 90%;
     border-radius: 3px;
   }
 }
@@ -48,8 +55,9 @@ a {
 }
 
 pre {
+  @include andante;
   background-color: $color-neutral-lower;
-  padding: $v-unit $h-unit;
+  padding: ($v-unit * .75) $h-unit;
   overflow-y: auto;
 }
 

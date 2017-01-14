@@ -58,10 +58,12 @@ block page
                         src=slide.cover.format.original
                        )
 
-          if slide.description
-            .slide-page__main-content
+
+        .slide-page__main-content
+            .slide-page__title
+                h1.slide-page__title-content!= slide.title
+            if slide.description
                 .slide-page__main-content-wrapper
-                    h1.slide-page__title!= slide.title
                     .slide-page__description!= slide.description
 
    script(type='text/javascript').

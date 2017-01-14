@@ -25,7 +25,7 @@
 @mixin largo {
   $font-size: ('xxsmall': 20, 'medium': 24, 'large': 26);
   @include responsive-typo($font-size);
-  font-weight: 400;
+  font-weight: bold;
   line-height: 1.2;
 }
 

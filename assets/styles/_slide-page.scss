@@ -31,15 +31,22 @@
   &__main-content-wrapper {
     margin: 0 auto;
     max-width: $layout-slide-wrapper;
-    padding: 0 $h-unit;
+    padding: 0 ($column-gutter / 2);
+    border-top: 2px solid $color-neutral-low;
   }
 
   &__title {
-    @include grave;
-    margin: 0;
+    padding: 0 ($column-gutter / 2) $v-unit;
 
     @include media-query(large) {
+      padding-bottom: $v-unit * 1.5;
     }
+  }
+
+  &__title-content {
+    @include grave;
+    max-width: $layout-slide-wrapper;
+    margin: 0 auto;
   }
 
   &__controls {
@@ -58,16 +65,12 @@
   }
 
   &__description {
-    padding-top: $v-unit / 2;
 
     @include media-query(medium) {
       padding-top: $v-unit;
     }
 
     p {
-      &:first-child {
-        margin-top: 0;
-      }
 
       &:last-child {
         margin-bottom: 0;
