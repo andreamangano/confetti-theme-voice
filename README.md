@@ -40,6 +40,10 @@ cd themes
 rm -rf voice
 ```
 
+## Features
+* Mobile friendly
+* Keyboard navigation
+
 ## Configs
 It's possible to choose the primary theme colour by adding the property
 ``` themeConfig ``` to your `` path-to-your-deck/settings.yml `` file as
