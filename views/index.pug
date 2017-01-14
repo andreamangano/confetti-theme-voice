@@ -25,7 +25,7 @@ block page
                             h3.hero__subtitle!=subtitle
 
                         .hero__detail
-                            a.hero__slides(href="#table-contents")
+                            a.hero__slides(href=paths.to.base + "#table-contents")
                                 .hero__slides-icon.icon
                                     include ./../assets/images/icons/slides.svg
                                 .hero__slides-count=slides.length
