@@ -47,7 +47,7 @@
 
 // h6
 @mixin adagio {
-  $font-size: ('xxsmall': 15, 'medium': 18);
+  $font-size: ('xxsmall': 15, 'medium': 18, 'large': 20);
   @include responsive-typo($font-size);
   font-weight: 400;
   line-height: 1.5;

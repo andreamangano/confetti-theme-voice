@@ -15,15 +15,17 @@
 
   &__main-header {
     background-color: $color-neutral-lowest;
-    padding-top: $v-unit;
     @include media-query(large) {
-      padding-top: $v-unit * 2;
       background-color: $color-neutral-higher;
     }
   }
 
   &__main-content {
-    padding-bottom: $v-unit * 3;
+    padding: $v-unit 0 $v-unit * 2;
+
+    @include media-query(medium) {
+      padding: $v-unit * 2 0 $v-unit * 3;
+    }
   }
 
   &__main-content-wrapper {
@@ -35,10 +37,8 @@
   &__title {
     @include grave;
     margin: 0;
-    color: $color-neutral-highest;
 
     @include media-query(large) {
-      color: $color-neutral-lowest;
     }
   }
 
@@ -48,11 +48,7 @@
   }
 
   &__cover {
-    margin: $v-unit (-$column-gutter / 2);
-
-    @include media-query(medium) {
-      margin: $v-unit * 2 0 0;
-    }
+    margin: 0 (-$column-gutter / 2);
   }
 
   &__cover-image {
@@ -65,7 +61,7 @@
     padding-top: $v-unit / 2;
 
     @include media-query(medium) {
-      padding-top: $v-unit * 2.5;
+      padding-top: $v-unit;
     }
 
     p {

@@ -20,7 +20,6 @@ block page
       main.slide-page__main
           .slide-page__main-header
               .slide-page__main-header-wrapper
-                  h1.slide-page__title!= slide.title
                   .slide-page__controls
                         .controls
                             .controls__content
@@ -62,6 +61,7 @@ block page
           if slide.description
             .slide-page__main-content
                 .slide-page__main-content-wrapper
+                    h1.slide-page__title!= slide.title
                     .slide-page__description!= slide.description
 
    script(type='text/javascript').

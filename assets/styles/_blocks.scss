@@ -481,6 +481,7 @@
     @include grid-column(0, true);
     padding-right: $h-unit;
     display: none;
+    margin-left: (-$column-gutter / 2);
 
     @include media-query(medium) {
       display: flex;
