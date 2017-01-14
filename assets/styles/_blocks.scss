@@ -303,19 +303,9 @@
     display: flex;
     align-items: baseline;
     line-height: 1;
-    margin: $v-unit 0 0;
+    margin: 0;
+    padding-top: $v-unit;
     position: relative;
-
-    /*
-    &::before {
-      background-color: $color-primary;
-      content: '';
-      display: block;
-      height: rem-calc(10);
-      margin-right: $h-unit / 2;
-      width: rem-calc(10);
-    }
-    */
   }
 
   &__detail {
@@ -484,6 +474,7 @@
 
   &__content {
     @include grid-row(false);
+    align-items: center;
   }
 
   &__cover {
@@ -507,7 +498,7 @@
 
   &__info {
     @include grid-column(auto, true);
-    padding: $v-unit * .75 $h-unit $v-unit * .75 0;
+    padding: ($v-unit * .75) ($h-unit * .75) ($v-unit * .75) 0;
     justify-content: center;
   }
 
@@ -535,16 +526,12 @@
 
   &__counter {
     padding: ($v-unit * .75) 0 ($v-unit * .75) $h-unit;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    flex-direction: column;
   }
 
   &__counter-value {
     @include largo;
     color: $color-neutral-lowest;
+    line-height: 1;
   }
 }
 //---------
