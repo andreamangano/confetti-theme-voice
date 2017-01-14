@@ -467,7 +467,6 @@
 
     &, p {
       @include andante;
-      line-height: 1.4;
     }
 
     p {
@@ -499,8 +498,8 @@
 
   &__cover-image {
     display: block;
-    width: rem-calc(60);
-    height: rem-calc(60);
+    width: rem-calc(70);
+    height: rem-calc(70);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -508,13 +507,12 @@
 
   &__info {
     @include grid-column(auto, true);
-    padding: $v-unit / 4 $h-unit $v-unit / 2 0;
+    padding: $v-unit * .75 $h-unit $v-unit * .75 0;
     justify-content: center;
   }
 
   &__author {
     @include andante;
-    padding-top: $v-unit / 4;
     color: $color-neutral-medium;
     line-height: 1;
     display: none;
