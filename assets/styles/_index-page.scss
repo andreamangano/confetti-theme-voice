@@ -43,10 +43,6 @@
     padding: $v-unit * 2 0 0;
   }
 
-  &__table-contents {
-
-  }
-
   &__author {
     padding: $v-unit * 2 0 0;
   }
@@ -54,10 +50,10 @@
   &__controls {
     @include fixed-bottom;
     z-index: z(navbar);
-
-    //@include media-query(medium) {
-    //  display: none;
-    //}
+    
+    @include media-query(medium) {
+      display: none;
+    }
   }
 
 }
