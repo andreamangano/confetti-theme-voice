@@ -405,8 +405,7 @@
   }
 
   &__text {
-    // border: 1px solid $color-neutral-low;
-    padding: $v-unit rem-calc(2);
+    padding: ($v-unit * .75) rem-calc(2);
   }
 
   &__title {
@@ -515,6 +514,7 @@
 
   &__author {
     @include andante;
+    padding-top: $v-unit / 4;
     color: $color-neutral-medium;
     line-height: 1;
     display: none;
