@@ -12,7 +12,7 @@ block page
                             style="background-image: url("+paths.to.deckImages + author.picture+");")
                       .deck-preview__info
                           .deck-preview__author!= author.name + ': '
-                          a.deck-preview__title(href="/")!= title
+                          a.deck-preview__title(href=href=paths.to.base)!= title
                       .deck-preview__slides
                         .deck-preview__counter
                             .deck-preview__counter-value=sliderNav.current.data.index
@@ -33,7 +33,7 @@ block page
                                             .controls__text= translations.previous
 
                                 .controls__item.controls__item--index
-                                    a.controls__link(href="/")
+                                    a.controls__link(href=paths.to.base)
                                         .controls__icon.icon
                                             include ./../assets/images/icons/slides.svg
                                         .controls__text
@@ -50,12 +50,6 @@ block page
                                             .controls__icon.icon
                                                 include ./../assets/images/icons/next.svg
                                             .controls__text= translations.next
-
-                                //-
-                                    strong= sliderNav.current.index
-                                    | /
-                                    = sliderNav.total
-                                    = translations.slides
                             .status-bar
                                 - var percentage = (sliderNav.current.index * 100) / sliderNav.total
                                 .status-bar__percentage(style="width:" + percentage + "%;")
