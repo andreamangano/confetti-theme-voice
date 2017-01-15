@@ -18,7 +18,8 @@ html(lang=lang)
     meta(charset="utf-8")
     meta(http-equiv="X-UA-Compatible" content="IE=edge")
 
-    base(href="/")
+    // Set baseUrl to release_prefix beacause the deck folder could be a domain subdirectory.
+    base(href=release_prefix)
     link(href=paths.to.styles + "style.css"
          rel="stylesheet"
          type="text/css"
