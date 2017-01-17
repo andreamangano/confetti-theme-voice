@@ -20,24 +20,29 @@ html(lang=lang)
 
     // Set baseUrl to release_prefix because the deck folder could be a domain subdirectory.
     base(href=release_prefix)
-    link(href=paths.to.styles + "style.css"
-         rel="stylesheet"
-         type="text/css"
+
+    link(
+      href=paths.to.styles + "style.css"
+      rel="stylesheet"
+      type="text/css"
     )
-    link(href="https://fonts.googleapis.com/css?family=Lato:400,700"
-         rel="stylesheet")
+    link(
+      href="https://fonts.googleapis.com/css?family=Lato:400,700"
+      rel="stylesheet")
 
   body.layout
 
     .layout__page
-        block page
+      block page
 
     footer.layout__footer(role="contentinfo")
-        // Support Confetti, don't remove the Copyright :)
-        .layout__footer-wrapper
-            = "Generated with "
-            a(href="https://github.com/andreamangano/confetti-cli")
-                strong Confetti
-            != "&copy;, an open source project from <strong>Italy.</strong>"
+      // Support Confetti, don't remove the Copyright :)
+      .layout__footer-wrapper
+        = "Generated with "
+        a(href="https://github.com/andreamangano/confetti-cli")
+          strong Confetti
+        != "&copy;, an open source project from <strong>Italy</strong>."
 
-    block scripts
+    block base_includes_scripts
+
+    block includes_scripts
