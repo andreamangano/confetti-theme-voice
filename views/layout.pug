@@ -18,7 +18,7 @@ html(lang=lang)
     meta(charset="utf-8")
     meta(http-equiv="X-UA-Compatible" content="IE=edge")
 
-    // Set baseUrl to release_prefix beacause the deck folder could be a domain subdirectory.
+    // Set baseUrl to release_prefix because the deck folder could be a domain subdirectory.
     base(href=release_prefix)
     link(href=paths.to.styles + "style.css"
          rel="stylesheet"
@@ -26,15 +26,18 @@ html(lang=lang)
     )
     link(href="https://fonts.googleapis.com/css?family=Lato:400,700"
          rel="stylesheet")
+
   body.layout
 
     .layout__page
         block page
 
-    footer.layout__footer
+    footer.layout__footer(role="contentinfo")
         // Support Confetti, don't remove the Copyright :)
         .layout__footer-wrapper
             = "Generated with "
             a(href="https://github.com/andreamangano/confetti-cli")
                 strong Confetti
             != "&copy;, an open source project from <strong>Italy.</strong>"
+
+    block scripts
