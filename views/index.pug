@@ -79,117 +79,116 @@ block page
                       .actions__text= translations.material
 
       //- Main content
-      .index-page__content-wrapper
+      main.index-page__main
         .index-page__content
-          .index-page__main
+          .index-page__content-wrapper
+            .index-page__content-main
 
-            .index-page__intro
-                .intro
-                    if description
-                      .intro__title
-                        .label= translations.introduction
-                      .intro__description!= description
+              .index-page__intro
+                  .intro
+                      if description
+                        .intro__title
+                          .label= translations.introduction
+                        .intro__description!= description
 
-                    .intro__start-button
-                      a.button(
-                        href=slides[0].url)
-                        .button__icon
-                          .icon
-                            include ./../assets/images/icons/start.svg
-                        = translations.start_presentation
+                      .intro__start-button
+                        a.button(
+                          href=slides[0].url)
+                          .button__icon
+                            .icon
+                              include ./../assets/images/icons/start.svg
+                          = translations.start_presentation
 
-          .index-page__side
+            .index-page__side
 
-            //- Author
-            .index-page__author
-              .author
-                .author__title= translations.published_by
-                .author__content
+              //- Author
+              .index-page__author
+                .author
+                  .author__title= translations.published_by
+                  .author__content
 
-                  //- Picture
-                  if author.picture
-                    .author__picture
-                      img.author__picture-image(
-                        src=paths.to.deckImages + author.picture)
+                    //- Picture
+                    if author.picture
+                      .author__picture
+                        img.author__picture-image(
+                          src=paths.to.deckImages + author.picture)
 
-                  .author__info
+                    .author__info
 
-                    //- Name
-                    h4.author__name!= author.name
+                      //- Name
+                      h4.author__name!= author.name
 
-                    //- Role
-                    if author.role
-                      .author__role!= author.role
+                      //- Role
+                      if author.role
+                        .author__role!= author.role
 
-                //- Description
-                if author.description
-                  .author__description!= author.description
+                  //- Description
+                  if author.description
+                    .author__description!= author.description
 
-          //- TODO: add author links
+            //- TODO: add author links
 
-      .index-page__secondary
-        .index-page__secondary-wrapper
-          .index-page__table-contents
+        .index-page__secondary
+          .index-page__secondary-wrapper
+            .index-page__table-contents
 
-            //- Table of contents
-            #table-contents.table-contents
-              .table-contents__header
+              //- Table of contents
+              #table-contents.table-contents
+                .table-contents__header
 
-                h2.table-contents__title= translations.table_contents
+                  h2.table-contents__title= translations.table_contents
 
-                .table-contents__detail
-                  .table-contents__detail-icon
-                    .icon
-                      include ./../assets/images/icons/slides.svg
+                  .table-contents__detail
+                    .table-contents__detail-icon
+                      .icon
+                        include ./../assets/images/icons/slides.svg
 
-                  span.table-contents__detail-text
-                    strong.table-contents__detail-evidence=slides.length
-                    =slidesTranslations
+                    span.table-contents__detail-text
+                      strong.table-contents__detail-evidence=slides.length
+                      =slidesTranslations
 
-              ul.table-contents__list
-                each slide, index in slides
-                  li.table-contents__item
-                    .slide-preview
-                      a.slide-preview__link(
-                        href=slide.url)
+                ul.table-contents__list
+                  each slide, index in slides
+                    li.table-contents__item
+                      .slide-preview
+                        a.slide-preview__link(
+                          href=slide.url)
 
-                        .slide-preview__cover
-                          .slide-preview__cover-overlay
-                          .slide-preview__index=translations.slide + " " + slide.index
+                          .slide-preview__cover
+                            .slide-preview__cover-overlay
+                            .slide-preview__index=slide.index
 
-                          img.slide-preview__cover-image(
-                            src=slide.cover.format.small)
+                            img.slide-preview__cover-image(
+                              src=slide.cover.format.small)
 
-                        .slide-preview__text
-                          h4.slide-preview__title!=slide.title
+                          .slide-preview__text
+                            h4.slide-preview__title!=slide.title
 
       .index-page__controls
-        .controls
-          .controls__content
+        .index-page__controls-buttons
+          .controls
+            .controls__content
 
-            //- Demo button
-            .controls__item.controls__item--demo
-              if demo
-                a.controls__link(
-                  href=demo)
-                  .controls__icon.icon
-                    include ./../assets/images/icons/demo.svg
-                  .controls__text= translations.demo
-
-            //- Start button
-            .controls__item.controls__item--start
-              a.controls__link.controls__link--start(href=slides[0].url)
-                .controls__icon.icon
-                  include ./../assets/images/icons/start.svg
-                .controls__text= translations.start
-
-            //- Material button
-            .controls__item.controls__item--material
-                if material
-                  a.controls__link.controls__material(href=material)
+              //- Demo button
+              .controls__item.controls__item--demo
+                if demo
+                  a.controls__link(
+                    href=demo)
                     .controls__icon.icon
-                      include ./../assets/images/icons/material.svg
-                    .controls__text= translations.material
+                      include ./../assets/images/icons/demo.svg
+                    .controls__text= translations.demo
 
-          //- Only for visual consistency
-          .status-bar
+              //- Start button
+              .controls__item.controls__item--start
+                a.controls__link.controls__link--start(href=slides[0].url)
+                  .controls__icon.icon
+                    include ./../assets/images/icons/start.svg
+                  .controls__text= translations.start
+
+              //- Material button
+              .controls__item.controls__item--material
+                  if material
+                    a.controls__link.controls__material(href=material)
+                      .controls__icon.icon
+                        include ./../assets/images/icons/material.svg
+                      .controls__text= translations.material
