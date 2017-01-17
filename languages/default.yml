@@ -1,15 +1,15 @@
 previous: Previous
 next: Next
 overview: Overview
-tableOfContents: Table of Contents
+table_contents: Table of Contents
 slide: Slide
 slides: Slides
-startPresentation: Start now
+start_presentation: Start now
 demo: Demo
 material: Material
 share: Share
-createdBy: Created by
 introduction: Introduction
-publishedBy: Published by
-slidesIndex: Slides Index
+published_by: Published by
 start: Start
+go_next_slide: Go to the next slide
+go_prev_slide: Go to the previous slide
