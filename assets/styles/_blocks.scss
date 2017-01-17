@@ -3,21 +3,21 @@
 //-----
 .icon {
   height: 1em;
-  width: 1em;
   line-height: 0;
+  width: 1em;
 }
 //------
 // LABEL
 //------
 .label {
   @include moderato;
-  padding: rem-calc(3) $h-unit / 2;
   background-color: $color-neutral-lower;
   color: $color-neutral-high;
-  line-height: 1;
   display: inline-flex;
-  text-transform: uppercase;
   letter-spacing: 1px;
+  line-height: 1;
+  padding: rem-calc(3) $h-unit / 2;
+  text-transform: uppercase;
 
   &__icon {
     margin-right: $h-unit / 2;
@@ -28,27 +28,26 @@
 //-----
 .button {
   @include adagio;
-  // border: 2px solid $color-primary;
+  align-items: center;
   background-color: $color-primary;
   border-radius: 3px;
-  padding: 0 $h-unit * 2;
-  height: rem-calc(44);
-  display: inline-flex;
-  line-height: 0;
-  align-items: center;
-  justify-content: center;
-  color: $color-neutral-lowest;
-  text-decoration: none;
-  font-weight: 700;
   box-shadow: 0 0 3px 3px transparent;
+  color: $color-neutral-lowest;
+  display: inline-flex;
+  font-weight: 700;
+  height: rem-calc(44);
+  justify-content: center;
+  line-height: 0;
+  padding: 0 $h-unit * 2;
+  text-decoration: none;
 
   &:hover {
     box-shadow: 0 0 5px 5px $color-neutral-low;
   }
 
   &__icon {
-    margin-right: $h-unit / 2;
     font-size: 86%;
+    margin-right: $h-unit / 2;
   }
 }
 //------
@@ -56,16 +55,10 @@
 //------
 .intro {
 
-  &__title {
-  }
+  // &__title {}
 
   &__description {
     color: $color-neutral-medium-high;
-    &, p {
-      //&::first-letter {
-      //  color: red;
-      //}
-    }
   }
 
   &__start-button {
@@ -101,15 +94,15 @@
   }
 
   &__cover {
-    background-size: cover;
-    background-repeat: no-repeat;
     background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
 
     @include media-query(medium) {
 
       &::before,
       &::after {
-        content: " ";
+        content: '';
         display: block;
         height: 100%;
         position: absolute;
@@ -132,18 +125,18 @@
   }
 
   &__info-wrapper {
-    max-width: $layout-wrapper;
     margin: 0 auto;
+    max-width: $layout-wrapper;
     padding: $v-unit * 3 $h-unit;
     position: relative;
 
     &::after {
-      content: '';
       background-image: linear-gradient(to top, rgba($cover-base-color, .4), rgba($cover-base-color, .8));
+      content: '';
 
       @include media-query(large) {
-        background-image: none;
         background-color: rgba($cover-base-color, .1);
+        background-image: none;
       }
     }
   }
@@ -167,9 +160,9 @@
   }
 
   &__author-picture {
-    width: rem-calc(100);
-    margin-bottom: $v-unit;
     display: none;
+    margin-bottom: $v-unit;
+    width: rem-calc(100);
 
     @include media-query(medium) {
       display: block;
@@ -178,8 +171,8 @@
 
   &__author-picture-image {
     border-radius: 3px;
-    width: 100%;
     display: block;
+    width: 100%;
   }
 
   &__title {
@@ -222,7 +215,7 @@
     margin-left: $h-unit / 2;
 
     &::before {
-      content: "\00b7";
+      content: '\00b7';
       margin-right: $h-unit / 2;
     }
   }
@@ -232,17 +225,17 @@
   }
 
   &__category {
-    font-size: em-calc(12);
-    margin-right: $h-unit / 2;
-    text-transform: uppercase;
-    font-weight: bold;
-    padding: rem-calc(2) $h-unit / 2;
     background-color: $color-primary;
     color: $color-neutral-lowest;
-    letter-spacing: 1px;
     display: inline-block;
+    font-size: em-calc(12);
+    font-weight: bold;
+    letter-spacing: 1px;
     line-height: 1;
+    margin-right: $h-unit / 2;
+    padding: rem-calc(2) $h-unit / 2;
     text-shadow: none;
+    text-transform: uppercase;
   }
 
   &__categories + &__title {
@@ -250,14 +243,14 @@
   }
 
   &__links {
-    position: absolute;
-    top: $v-unit * 3;
-    right: $h-unit;
-    z-index: 2;
     display: none;
+    position: absolute;
+    right: $h-unit;
+    top: $v-unit * 3;
+    z-index: 2;
 
     @include media-query(medium) {
-     display: block;
+      display: block;
     }
   }
 }
@@ -267,15 +260,15 @@
 .actions {
 
   &__link {
-    background-color: rgba($color-neutral-high, .4);
-    padding: rem-calc(8);
-    text-decoration: none;
-    display: flex;
     align-items: center;
+    background-color: rgba($color-neutral-high, .4);
+    border-radius: 3px;
+    color: $color-neutral-lowest;
+    display: flex;
     flex-direction: column;
     margin-bottom: $v-unit;
-    color: $color-neutral-lowest;
-    border-radius: 3px;
+    padding: rem-calc(8);
+    text-decoration: none;
 
     &:hover {
       background-color: $color-primary;
@@ -287,11 +280,10 @@
   }
 
   &__text {
-    margin-top: $v-unit / 2;
     font-size: em-calc(12);
+    margin-top: $v-unit / 2;
     text-transform: uppercase;
   }
-
 }
 //------------------
 // TABLE OF CONTENTS
@@ -300,8 +292,8 @@
   padding-bottom: $v-unit;
 
   &__title {
-    display: flex;
     align-items: baseline;
+    display: flex;
     line-height: 1;
     margin: 0;
     padding-top: $v-unit;
@@ -310,9 +302,9 @@
 
   &__detail {
     @include andante;
+    align-items: center;
     color: $color-neutral-medium-high;
     display: flex;
-    align-items: center;
     line-height: 1;
     margin-top: $v-unit;
   }
@@ -347,8 +339,8 @@
 
   &__link {
     border-top: 1px solid $color-neutral-low;
-    display: block;
     color: $color-neutral-highest;
+    display: block;
     text-decoration: none;
 
     &:hover {
@@ -361,12 +353,12 @@
   }
 
   &__cover-overlay {
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
     bottom: 0;
     box-shadow: inset 0 0 3px 3px rgba($color-neutral-medium-high, .2);
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
   }
 
   &__link:hover &__cover-overlay {
@@ -374,18 +366,18 @@
   }
 
   &__index {
-    font-size: em-calc(12);
     background-color: rgba($color-neutral-highest, .6);
     border-radius: 3px;
-    color: $color-neutral-lowest;
-    text-transform: uppercase;
-    position: absolute;
     bottom: rem-calc(4);
-    right: rem-calc(4);
-    text-align: center;
-    padding: rem-calc(3) $h-unit / 2;
+    color: $color-neutral-lowest;
+    font-size: em-calc(12);
     font-weight: 700;
     line-height: 1;
+    padding: rem-calc(3) $h-unit / 2;
+    position: absolute;
+    right: rem-calc(4);
+    text-align: center;
+    text-transform: uppercase;
     z-index: 1;
   }
 
@@ -423,8 +415,8 @@
 
   &__picture {
     @include grid-column(0, true);
-    max-width: rem-calc(80);
     margin-right: $h-unit / 2;
+    max-width: rem-calc(80);
   }
 
   &__picture-image {
@@ -446,22 +438,17 @@
   &__role {
     @include larghetto;
     color: $color-neutral-medium-high;
-    margin-top: $v-unit / 4;
     line-height: 1;
+    margin-top: $v-unit / 4;
   }
 
   &__description {
-    margin-top: $v-unit * 1.5;
     color: $color-neutral-medium-high;
+    margin-top: $v-unit * 1.5;
 
-    &, p {
-      @include andante;
-    }
-
+    &,
     p {
-      &:last-child {
-        margin-bottom: 0;
-      }
+      @include andante;
     }
   }
 }
@@ -478,9 +465,9 @@
 
   &__cover {
     @include grid-column(0, true);
-    padding-right: $h-unit;
     display: none;
     margin-left: (-$column-gutter / 2);
+    padding-right: $h-unit;
 
     @include media-query(medium) {
       display: flex;
@@ -488,25 +475,26 @@
   }
 
   &__cover-image {
-    display: block;
-    width: rem-calc(70);
-    height: rem-calc(70);
-    background-size: cover;
-    background-repeat: no-repeat;
     background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: block;
+    height: rem-calc(70);
+    width: rem-calc(70);
   }
 
   &__info {
     @include grid-column(auto, true);
-    padding: ($v-unit * .75) ($h-unit * .75) ($v-unit * .75) 0;
     justify-content: center;
+    padding: ($v-unit * .75) ($h-unit * .75) ($v-unit * .75) 0;
   }
 
   &__author {
     @include andante;
     color: $color-neutral-medium;
-    line-height: 1;
     display: none;
+    line-height: 1;
+
     @include media-query(medium) {
       display: block;
     }
@@ -532,86 +520,5 @@
     @include largo;
     color: $color-neutral-lowest;
     line-height: 1;
-  }
-}
-//---------
-// CONTROLS
-//---------
-.controls {
-  background-color: $color-neutral-highest;
-  color: $color-neutral-lowest;
-
-  &__content {
-    @include grid-row(false);
-    justify-content: space-between;
-  }
-
-  &__item {
-    @include grid-column(4, true);
-    
-    &--index {
-      border-left: 1px solid $color-neutral-high;
-      border-right: 1px solid $color-neutral-high;
-    }
-
-    &--start {
-      background-color: $color-primary;
-    }
-
-    &--demo,
-    &--material{}
-  }
-
-  &__item--next &__icon {
-    @include media-query(medium) {
-      order: 2;
-    }
-  }
-
-  &__link {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: $v-unit / 4 $h-unit / 2;
-    text-decoration: none;
-    align-items: center;
-
-    @include media-query(medium) {
-      font-size: em-calc(24);
-      padding: $v-unit $h-unit;
-      flex-direction: row;
-      justify-content: center;
-    }
-  }
-
-  &__icon {
-    font-size: em-calc(16);
-    margin: $v-unit / 4 $h-unit / 2;
-  }
-
-  &__text {
-    font-size: em-calc(9);
-    text-transform: uppercase;
-    line-height: 1;
-    margin: $v-unit / 6 0;
-    letter-spacing: 1px;
-    font-weight: bold;
-  }
-}
-
-//-----------
-// STATUS BAR
-//-----------
-.status-bar {
-  height: $v-unit / 4;
-  background-color: $color-neutral-medium;
-  position: relative;
-
-  &__percentage {
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    background-color: $color-primary;
   }
 }

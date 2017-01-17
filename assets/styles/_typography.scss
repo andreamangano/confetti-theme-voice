@@ -32,13 +32,17 @@ p {
   @include adagio;
   margin: $v-unit / 2 0;
 
+  p:last-child {
+    margin-bottom: 0;
+  }
+
   code {
     @include andante;
-    padding: rem-calc(3) $h-unit / 2;
     background-color: $color-neutral-lower;
+    border-radius: 3px;
     color: $color-neutral-high;
     line-height: 1;
-    border-radius: 3px;
+    padding: rem-calc(3) $h-unit / 2;
   }
 }
 
@@ -57,7 +61,7 @@ a {
 pre {
   @include andante;
   background-color: $color-neutral-lower;
-  padding: ($v-unit * .75) $h-unit;
   overflow-y: auto;
+  padding: ($v-unit * .75) $h-unit;
 }
 

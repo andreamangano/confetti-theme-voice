@@ -1,0 +1,79 @@
+//-----------
+// STATUS BAR
+//-----------
+.status-bar {
+  background-color: $color-neutral-medium;
+  height: $v-unit / 4;
+  position: relative;
+
+  &__percentage {
+    background-color: $color-primary;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    top: 0;
+  }
+}
+//---------
+// CONTROLS
+//---------
+.controls {
+  background-color: $color-neutral-highest;
+  color: $color-neutral-lowest;
+
+  &__content {
+    @include grid-row(false);
+    justify-content: space-between;
+  }
+
+  &__item {
+    @include grid-column(4, true);
+
+    &--index {
+      border-left: 1px solid $color-neutral-high;
+      border-right: 1px solid $color-neutral-high;
+    }
+
+    &--start {
+      background-color: $color-primary;
+    }
+
+    // &--demo,
+    // &--material{}
+  }
+
+  &__item--next &__icon {
+    @include media-query(medium) {
+      order: 2;
+    }
+  }
+
+  &__link {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    padding: $v-unit / 4 $h-unit / 2;
+    text-decoration: none;
+
+    @include media-query(medium) {
+      flex-direction: row;
+      font-size: em-calc(24);
+      justify-content: center;
+      padding: $v-unit $h-unit;
+    }
+  }
+
+  &__icon {
+    font-size: em-calc(16);
+    margin: $v-unit / 4 $h-unit / 2;
+  }
+
+  &__text {
+    font-size: em-calc(9);
+    font-weight: bold;
+    letter-spacing: 1px;
+    line-height: 1;
+    margin: $v-unit / 6 0;
+    text-transform: uppercase;
+  }
+}
