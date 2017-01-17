@@ -32,39 +32,40 @@ block page
         .slide-page__main-header-wrapper
 
             .slide-page__controls
-              nav.controls(role="navigation")
-                  .controls__content
-                    .controls__item.controls__item--prev
+              .slide-page__controls-buttons
+                nav.controls(role="navigation")
+                    .controls__content
+                      .controls__item.controls__item--prev
 
-                      //- Previous slide button
-                      if sliderNav.prev
-                        a.controls__link(
-                          href=sliderNav.prev.data.url
-                          title=translations.go_prev_slide)
+                        //- Previous slide button
+                        if sliderNav.prev
+                          a.controls__link(
+                            href=sliderNav.prev.data.url
+                            title=translations.go_prev_slide)
+                            .controls__icon.icon
+                              include ./../assets/images/icons/prev.svg
+                            .controls__text= translations.previous
+
+                      .controls__item.controls__item--index
+                        a.controls__link(href="index.html#table-contents")
                           .controls__icon.icon
-                            include ./../assets/images/icons/prev.svg
-                          .controls__text= translations.previous
+                            include ./../assets/images/icons/slides.svg
+                          .controls__text
+                             =sliderNav.current.index
+                             ="/"
+                             =sliderNav.total
+                             = " "
+                             =translations.slides
 
-                    .controls__item.controls__item--index
-                      a.controls__link(href="index.html#table-contents")
-                        .controls__icon.icon
-                          include ./../assets/images/icons/slides.svg
-                        .controls__text
-                           =sliderNav.current.index
-                           ="/"
-                           =sliderNav.total
-                           = " "
-                           =translations.slides
-
-                    //- Next slide button
-                    .controls__item.controls__item--next
-                      if sliderNav.next
-                        a.controls__link(
-                          href=sliderNav.next.data.url
-                          title=translations.go_next_slide)
-                          .controls__icon.icon
-                            include ./../assets/images/icons/next.svg
-                          .controls__text= translations.next
+                      //- Next slide button
+                      .controls__item.controls__item--next
+                        if sliderNav.next
+                          a.controls__link(
+                            href=sliderNav.next.data.url
+                            title=translations.go_next_slide)
+                            .controls__icon.icon
+                              include ./../assets/images/icons/next.svg
+                            .controls__text= translations.next
 
               //- Status bar
               .status-bar(
@@ -98,7 +99,9 @@ block page
               tabindex="3")
               != slide.description
 
-append scripts
+append base_includes_scripts
   script(type='text/javascript').
     var navigation = !{JSON.stringify(sliderNav)};
+
+append includes_scripts
   script(type="text/javascript" src=paths.to.javascript + 'slide.js')
