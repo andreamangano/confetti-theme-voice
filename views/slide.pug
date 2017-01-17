@@ -1,8 +1,8 @@
 extends layout
 
 block page
-   .slide-page
-      header.slide-page__header
+  .slide-page
+      header.slide-page__header(role="banner")
           .slide-page__header-wrapper
               .deck-preview
                   .deck-preview__content
@@ -17,16 +17,16 @@ block page
                         .deck-preview__counter
                             .deck-preview__counter-value=sliderNav.current.data.index
 
-      main.slide-page__main
+      main.slide-page__main(role="main")
           .slide-page__main-header
               .slide-page__main-header-wrapper
                   .slide-page__controls
-                        .controls
+                        nav.controls(role="navigation")
                             .controls__content
                                 .controls__item.controls__item--prev
                                     if sliderNav.prev
                                         a.controls__link(href=sliderNav.prev.data.url
-                                                         title=translations.previous)
+                                                         title=translations.go_prev_slide)
                                             .controls__icon.icon
                                                 include ./../assets/images/icons/prev.svg
                                             .controls__text= translations.previous
@@ -45,26 +45,30 @@ block page
                                 .controls__item.controls__item--next
                                     if sliderNav.next
                                         a.controls__link(href=sliderNav.next.data.url
-                                                         title=translations.next)
+                                                         title=translations.go_next_slide)
                                             .controls__icon.icon
                                                 include ./../assets/images/icons/next.svg
                                             .controls__text= translations.next
-                            .status-bar
+                            .status-bar(role="progressbar")
                                 .status-bar__percentage(style="width:" + sliderNav.percentage + "%;")
                   #js-slide.slide-page__cover
                        .slide-page__cover-content
+                        //- TODO: replace alt attribute with more accurate description provided by config
                         img.slide-page__cover-image(
-                        src=slide.cover.format.original
+                          tabindex="2"
+                          src=slide.cover.format.original
+                          alt!=slide.cover.file
                        )
 
 
           .slide-page__main-content
             .slide-page__title
-                h1.slide-page__title-content!= slide.title
+                h1.slide-page__title-content(tabindex="1")!= slide.title
             if slide.description
                 .slide-page__main-content-wrapper
-                    .slide-page__description!= slide.description
+                    .slide-page__description(tabindex="3")!= slide.description
 
-   script(type='text/javascript').
-       var navigation = !{JSON.stringify(sliderNav)};
-   script(type="text/javascript" src=paths.to.javascript + 'slide.js')
+append scripts
+  script(type='text/javascript').
+    var navigation = !{JSON.stringify(sliderNav)};
+  script(type="text/javascript" src=paths.to.javascript + 'slide.js')
