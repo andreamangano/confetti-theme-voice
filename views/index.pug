@@ -1,137 +1,195 @@
 extends layout
 
 block page
-    - var coverStyle = cover ? "background-image: url(" + paths.to.deckImages + cover + ");" : ""
-    - var slidesTranslations = slides.length > 1 ? translations.slides : translations.slide
+  - var coverStyle = cover ? "background-image: url(" + paths.to.deckImages + cover + ");" : ""
+  - var slidesTranslations = slides.length > 1 ? translations.slides : translations.slide
 
-    .index-page
-        header.index-page__header
-            .hero
-                .hero__info-wrapper
-                    .hero__cover(style=coverStyle)
-                    .hero__info
-                        .hero__author
-                            if author.picture
-                                .hero__author-picture
-                                    img.hero__author-picture-image(src=paths.to.deckImages + author.picture)
-                            .hero__author-name!= author.name + ":"
+  .index-page
 
-                        if categories
-                          .hero__categories
-                            each category, i in categories
-                              span.hero__category!= category
-                        h1.hero__title!=title
-                        if subtitle
-                            h3.hero__subtitle!=subtitle
+      //- Header
+      header.index-page__header
+        .hero
+          .hero__info-wrapper
 
-                        .hero__detail
-                            a.hero__slides(href="index.html#table-contents")
-                                .hero__slides-icon.icon
-                                    include ./../assets/images/icons/slides.svg
-                                .hero__slides-count=slides.length
-                                =slidesTranslations
-                            if date
-                                .hero__date=date
+            //- Intro Cover
+            .hero__cover(
+              style=coverStyle)
 
-                    if demo || material
-                        .hero__links
-                            .actions
-                                if demo
-                                    a.actions__link(href=demo)
-                                        .actions__icon.icon
-                                            include ./../assets/images/icons/demo.svg
-                                        .actions__text= translations.demo
-                                if material
-                                    a.actions__link(href=material)
-                                        .actions__icon.icon
-                                            include ./../assets/images/icons/material.svg
-                                        .actions__text= translations.material
-        .index-page__content-wrapper
-            .index-page__content
-                .index-page__main
+            //- Basic info
+            .hero__info
 
-                    .index-page__intro
-                        .intro
-                            if description
-                                .intro__title
-                                    .label= translations.introduction
-                                .intro__description!= description
+              //- Author
+              .hero__author
 
-                            .intro__start-button
-                                a.button(href=slides[0].url)
-                                    .button__icon
-                                        .icon
-                                            include ./../assets/images/icons/start.svg
-                                    = translations.start_presentation
+                //- Author picture
+                if author.picture
+                  .hero__author-picture
+                    img.hero__author-picture-image(
+                      src=paths.to.deckImages + author.picture)
 
-                .index-page__side
-                    .index-page__author
-                        .author
-                            .author__title= translations.published_by
-                            .author__content
-                                if author.picture
-                                  .author__picture
-                                    img.author__picture-image(src=paths.to.deckImages + author.picture)
-                                .author__info
-                                  h4.author__name!= author.name
+                //- Author name
+                .hero__author-name!= author.name + ":"
 
-                                  if author.role
-                                    .author__role!= author.role
+              //- Categories
+              if categories
+                .hero__categories
+                  each category, i in categories
+                    span.hero__category!= category
 
-                            if author.description
-                                .author__description!= author.description
+              //- Title
+              h1.hero__title!=title
 
-                    //- TODO: add author links
+              //- Subtitle
+              if subtitle
+                h3.hero__subtitle!=subtitle
 
-        .index-page__secondary
-            .index-page__secondary-wrapper
-                .index-page__table-contents
-                    #table-contents.table-contents
-                        .table-contents__header
-                            h2.table-contents__title= translations.table_contents
-                            .table-contents__detail
-                                .table-contents__detail-icon
-                                    .icon
-                                        include ./../assets/images/icons/slides.svg
+              .hero__detail
 
-                                span.table-contents__detail-text
-                                    strong.table-contents__detail-evidence=slides.length
-                                    =slidesTranslations
-                        ul.table-contents__list
-                            each slide, index in slides
-                                li.table-contents__item
-                                    .slide-preview
-                                        a.slide-preview__link(href=slide.url)
-                                            // TODO: add reference to cover small version
-                                            .slide-preview__cover
-                                                .slide-preview__cover-overlay
-                                                .slide-preview__index=translations.slide + " " + slide.index
-                                                img.slide-preview__cover-image(
-                                                    src=slide.cover.format.small
-                                                )
-                                            .slide-preview__text
-                                                h4.slide-preview__title!=slide.title
+                //- Slides total
+                a.hero__slides(
+                  href="index.html#table-contents")
 
-        .index-page__controls
-            .controls
-                .controls__content
-                    .controls__item.controls__item--demo
-                        if demo
-                            a.controls__link(href=demo)
-                                .controls__icon.icon
-                                    include ./../assets/images/icons/demo.svg
-                                .controls__text= translations.demo
-                    .controls__item.controls__item--start
-                        a.controls__link.controls__link--start(href=slides[0].url)
-                            .controls__icon.icon
-                                include ./../assets/images/icons/start.svg
-                            .controls__text= translations.start
-                    .controls__item.controls__item--material
-                        if material
-                            a.controls__link.controls__material(href=material)
-                                .controls__icon.icon
-                                    include ./../assets/images/icons/material.svg
-                                .controls__text= translations.material
+                  .hero__slides-icon.icon
+                      include ./../assets/images/icons/slides.svg
+                  .hero__slides-count=slides.length
+                  =slidesTranslations
 
-            //- Only for visual consistency
-            .status-bar
+                //- Date
+                if date
+                  .hero__date=date
+
+            if demo || material
+              .hero__links
+                .actions
+
+                  //- Demo link
+                  if demo
+                    a.actions__link(
+                      href=demo)
+                      .actions__icon.icon
+                          include ./../assets/images/icons/demo.svg
+                      .actions__text= translations.demo
+
+                  //- Material link
+                  if material
+                    a.actions__link(
+                      href=material)
+                      .actions__icon.icon
+                          include ./../assets/images/icons/material.svg
+                      .actions__text= translations.material
+
+      //- Main content
+      .index-page__content-wrapper
+        .index-page__content
+          .index-page__main
+
+            .index-page__intro
+                .intro
+                    if description
+                      .intro__title
+                        .label= translations.introduction
+                      .intro__description!= description
+
+                    .intro__start-button
+                      a.button(
+                        href=slides[0].url)
+                        .button__icon
+                          .icon
+                            include ./../assets/images/icons/start.svg
+                        = translations.start_presentation
+
+          .index-page__side
+
+            //- Author
+            .index-page__author
+              .author
+                .author__title= translations.published_by
+                .author__content
+
+                  //- Picture
+                  if author.picture
+                    .author__picture
+                      img.author__picture-image(
+                        src=paths.to.deckImages + author.picture)
+
+                  .author__info
+
+                    //- Name
+                    h4.author__name!= author.name
+
+                    //- Role
+                    if author.role
+                      .author__role!= author.role
+
+                //- Description
+                if author.description
+                  .author__description!= author.description
+
+          //- TODO: add author links
+
+      .index-page__secondary
+        .index-page__secondary-wrapper
+          .index-page__table-contents
+
+            //- Table of contents
+            #table-contents.table-contents
+              .table-contents__header
+
+                h2.table-contents__title= translations.table_contents
+
+                .table-contents__detail
+                  .table-contents__detail-icon
+                    .icon
+                      include ./../assets/images/icons/slides.svg
+
+                  span.table-contents__detail-text
+                    strong.table-contents__detail-evidence=slides.length
+                    =slidesTranslations
+
+              ul.table-contents__list
+                each slide, index in slides
+                  li.table-contents__item
+                    .slide-preview
+                      a.slide-preview__link(
+                        href=slide.url)
+
+                        .slide-preview__cover
+                          .slide-preview__cover-overlay
+                          .slide-preview__index=translations.slide + " " + slide.index
+
+                          img.slide-preview__cover-image(
+                            src=slide.cover.format.small)
+
+                        .slide-preview__text
+                          h4.slide-preview__title!=slide.title
+
+      .index-page__controls
+        .controls
+          .controls__content
+
+            //- Demo button
+            .controls__item.controls__item--demo
+              if demo
+                a.controls__link(
+                  href=demo)
+                  .controls__icon.icon
+                    include ./../assets/images/icons/demo.svg
+                  .controls__text= translations.demo
+
+            //- Start button
+            .controls__item.controls__item--start
+              a.controls__link.controls__link--start(href=slides[0].url)
+                .controls__icon.icon
+                  include ./../assets/images/icons/start.svg
+                .controls__text= translations.start
+
+            //- Material button
+            .controls__item.controls__item--material
+                if material
+                  a.controls__link.controls__material(href=material)
+                    .controls__icon.icon
+                      include ./../assets/images/icons/material.svg
+                    .controls__text= translations.material
+
+          //- Only for visual consistency
+          .status-bar
