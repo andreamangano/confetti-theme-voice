@@ -1,4 +1,4 @@
-(function() {
+document.addEventListener('DOMContentLoaded', function() {
   /*
    It takes the object navigation (from the template data) printed into the slide page.
    */
@@ -13,4 +13,4 @@
       window.location = navigation.next.data.url;
     }
   };
-})();
+});
