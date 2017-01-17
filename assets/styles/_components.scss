@@ -2,7 +2,7 @@
 // STATUS BAR
 //-----------
 .status-bar {
-  background-color: $color-neutral-medium;
+  background-color: $color-neutral-highest;
   height: $v-unit / 4;
   position: relative;
 
@@ -18,24 +18,26 @@
 // CONTROLS
 //---------
 .controls {
-  background-color: $color-neutral-highest;
-  color: $color-neutral-lowest;
+  background-color: $color-neutral-lowest;
+  color: $color-neutral-highest;
 
   &__content {
     @include grid-row(false);
     justify-content: space-between;
+    max-width: auto;
   }
 
   &__item {
     @include grid-column(4, true);
 
-    &--index {
-      border-left: 1px solid $color-neutral-high;
-      border-right: 1px solid $color-neutral-high;
+    &--index,
+    &--start {
+      border-left: 1px solid $color-neutral-medium-low;
+      border-right: 1px solid $color-neutral-medium-low;
     }
 
     &--start {
-      background-color: $color-primary;
+      background-color: $color-neutral-lower;
     }
 
     // &--demo,
@@ -65,7 +67,7 @@
 
   &__icon {
     font-size: em-calc(16);
-    margin: $v-unit / 4 $h-unit / 2;
+    margin: ($v-unit / 4) ($h-unit / 2);
   }
 
   &__text {
@@ -75,5 +77,9 @@
     line-height: 1;
     margin: $v-unit / 6 0;
     text-transform: uppercase;
+  }
+
+  &__link:hover &__text {
+    color: $color-neutral-medium-high;
   }
 }

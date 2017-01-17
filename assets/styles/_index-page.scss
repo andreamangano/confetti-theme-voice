@@ -1,20 +1,19 @@
 .index-page {
 
-  &__content-wrapper {
+  &__content {
     margin: 0 auto;
     max-width: $layout-wrapper;
     padding: 0 $h-unit;
   }
 
-  &__content {
+  &__content-wrapper {
     @include grid-row();
     padding-bottom: $v-unit * 3;
   }
 
-  &__main {
+  &__content-main {
     @include grid-column((xxsmall: 12, medium: 8));
     @include media-query(medium) {
-      // padding-right: $column-gutter;
       padding-top: $v-unit;
     }
   }
@@ -53,5 +52,11 @@
     @include media-query(medium) {
       display: none;
     }
+  }
+
+  &__controls-buttons {
+    $color-shadow: rgba($color-neutral-medium-low, .7);
+    border-top: 1px solid $color-shadow;
+    box-shadow: 0 0 rem-calc(10) $color-shadow;
   }
 }
