@@ -1,9 +1,19 @@
 .slide-page {
 
   &__header {
-    background-color: $color-neutral-highest;
     position: relative;
     z-index: z('navbar');
+
+    @include media-query('medium') {
+      left: 0;
+      position: fixed;
+      right: 0;
+      top: 0;
+    }
+
+    &:hover {
+      transform: translateY(0);
+    }
   }
 
   &__header-wrapper,
@@ -12,6 +22,24 @@
     max-width: $layout-wrapper;
     padding: 0 $h-unit;
    }
+
+  &__header-wrapper {
+    background-color: $color-neutral-highest;
+    transition: transform ease-in-out .2s, opacity ease-in-out .2s;
+
+    @include media-query('medium') {
+      background-color: rgba($color-neutral-highest, .8);
+      opacity: 0;
+      transform: translateY(-100%);
+    }
+  }
+
+  &__header:hover &__header-wrapper {
+    @include media-query('medium') {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 
   // &__main {}
 

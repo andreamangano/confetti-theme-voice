@@ -131,7 +131,7 @@
     position: relative;
 
     &::after {
-      background-image: linear-gradient(to top, rgba($cover-base-color, .4), rgba($cover-base-color, .8));
+      background-image: linear-gradient(to top, rgba($cover-base-color, .6), rgba($cover-base-color, .8));
       content: '';
 
       @include media-query(large) {
@@ -457,7 +457,6 @@
 // DECK PREVIEW
 //-------------
 .deck-preview {
-  background-color: $color-neutral-highest;
 
   &__content {
     @include grid-row(false);
@@ -514,7 +513,7 @@
 
   &__slides {
     @include grid-column(0, true);
-    border-left: 1px solid $color-neutral-higher;
+    border-left: 1px solid rgba($color-neutral-lowest, .2);
   }
 
   &__counter {
