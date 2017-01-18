@@ -76,13 +76,15 @@ block page
                 .status-bar__percentage(
                   style="width:" + sliderNav.percentage + "%;")
 
-            #js-slide.slide-page__cover
+            #js-slide-image.slide-page__cover
               .slide-page__cover-content
                 //- TODO: replace alt attribute with more accurate description provided by config
                 img.slide-page__cover-image(
                   tabindex="2"
                   src=slide.cover.format.original
                   alt=slide.cover.file)
+            #js-slide-image-fix.slide-page__cover-hidden
+              img.slide-page__cover-hidden-image(src=slide.cover.format.original)
 
       .slide-page__main-content
         .slide-page__title
