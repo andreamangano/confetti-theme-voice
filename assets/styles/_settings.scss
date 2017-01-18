@@ -3,6 +3,7 @@ $colors: map-get(getThemeConfig(), 'colors');
 
 // Set primary color
 $color-primary: map-get($colors, 'primary');
+$color-cover-background: map-get($colors, 'coverBackground');
 
 // Greyscale
 $color-neutral-lowest: #fff;

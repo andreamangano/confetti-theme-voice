@@ -2,6 +2,8 @@
 
   &__header {
     background-color: $color-neutral-highest;
+    position: relative;
+    z-index: z('navbar');
   }
 
   &__header-wrapper,
@@ -14,11 +16,7 @@
   // &__main {}
 
   &__main-header {
-    background-color: $color-neutral-lowest;
-
-    @include media-query(large) {
-      background-color: $color-neutral-higher;
-    }
+    background-color: $color-cover-background;
   }
 
   &__main-content {
@@ -76,8 +74,9 @@
     position: fixed;
     right: 0;
     top: 0;
-    transform: translateY(100%);
+    transform: translateY(-100%);
     transition: opacity ease-in-out .2s;
+    z-index: z('inpage');
 
     &::after {
       background-image: linear-gradient(to bottom, $color-neutral-lowest, rgba($color-neutral-lowest, 0));
