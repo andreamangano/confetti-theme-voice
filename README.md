@@ -54,6 +54,7 @@ themeConfig:
   # Place your favourite color here to customize the theme
   colors:
     primary: '#1C9383'
+    coverBackground: '#fff'
 ```
 
 ## Third party libraries
