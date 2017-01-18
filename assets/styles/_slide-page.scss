@@ -70,7 +70,7 @@
   }
 
   &__title-content {
-    @include grave;
+    @include largo;
     margin: 0 auto;
     max-width: $layout-slide-wrapper;
   }
