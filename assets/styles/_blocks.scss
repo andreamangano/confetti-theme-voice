@@ -394,6 +394,7 @@
     @include andante;
     color: $color-neutral-high;
     font-weight: 700;
+    line-height: 1.2;
     margin: 0;
   }
 }
@@ -502,9 +503,13 @@
 
   &__title {
     @include lento;
-    color: $color-neutral-lowest;
+    color: $color-neutral-medium;
     display: block;
     text-decoration: none;
+
+    @include media-query(medium) {
+      color: $color-neutral-lower;
+    }
   }
 
   &__slides {

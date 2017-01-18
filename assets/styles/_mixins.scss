@@ -16,7 +16,7 @@
 
 // h2
 @mixin grave {
-  $font-size: ('xxsmall': 24, 'medium': 30, 'large': 36);
+  $font-size: ('xxsmall': 22, 'medium': 30, 'large': 36);
   @include responsive-typo($font-size);
   font-weight: 400;
   line-height: 1.1;

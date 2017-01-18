@@ -55,8 +55,7 @@
   }
 
   &__controls-buttons {
-    $color-shadow: rgba($color-neutral-medium-low, .7);
-    border-top: 1px solid $color-shadow;
-    box-shadow: 0 0 rem-calc(10) $color-shadow;
+    border-top: 1px solid $color-neutral-medium-low;
+    box-shadow: 0 0 rem-calc(10) rgba($color-neutral-highest, .2);
   }
 }
