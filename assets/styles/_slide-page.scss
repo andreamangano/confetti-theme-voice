@@ -76,7 +76,7 @@
     position: fixed;
     right: 0;
     top: 0;
-    transform: translateY(-100%);
+    transform: translateY(100%);
     transition: opacity ease-in-out .2s;
 
     &::after {
