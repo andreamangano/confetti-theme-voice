@@ -9,3 +9,4 @@ config:
   # You can customize it
   colors:
     primary: '#ff004e'
+    coverBackground: '#fff'
