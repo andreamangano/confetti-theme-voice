@@ -2,7 +2,9 @@
 Default theme for [Confetti](https://github.com/andreamangano/confetti-cli), a tool for enriching your online speaker decks.
 
 ## Preview
-![cover.jpg](http://s26.postimg.org/nemahzokp/confetti_theme_preview_2.jpg)
+![cover.jpg](http://s26.postimg.org/3les310kp/confetti_theme_voice_main_preview.jpg)
+
+![cover2.jpg](http://s26.postimg.org/a0dszp7ah/confetti_theme_voice_main_mobile_preview.jpg)
 
 ## Install
 It is provided by default when you initialise a new slide deck using [Confetti CLI](https://github.com/andreamangano/confetti-cli).
