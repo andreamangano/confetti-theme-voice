@@ -2,6 +2,8 @@
 Default theme for [Confetti](https://github.com/andreamangano/confetti-cli), a tool for enriching your online speaker decks.
 
 ## Preview
+**[See the online demo!](https://andreamangano.github.io/confetti-demo/)**
+
 ![cover.jpg](http://s26.postimg.org/3les310kp/confetti_theme_voice_main_preview.jpg)
 
 ![cover2.jpg](http://s26.postimg.org/a0dszp7ah/confetti_theme_voice_main_mobile_preview.jpg)
