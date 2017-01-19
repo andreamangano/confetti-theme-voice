@@ -47,7 +47,8 @@ block page
                             .controls__text= translations.previous
 
                       .controls__item.controls__item--index
-                        a.controls__link(href="index.html#table-contents")
+                        a#js-open-menu-button.controls__link(
+                          href="index.html#table-contents")
                           .controls__icon.icon
                             include ./../assets/images/icons/slides.svg
                           .controls__text
@@ -98,9 +99,36 @@ block page
             .slide-page__description(
               tabindex="3")
               != slide.description
-              
+    
+
     #js-slide-image-fix.slide-page__cover-hidden
       img.slide-page__cover-hidden-image(src=slide.cover.format.original)
+
+    .slide-page__menu
+      .menu
+        .menu__overlay(
+        for="hidden-menu-input")
+
+        .menu__content
+          .menu__content-wrapper
+            .menu__close
+              button#js-close-menu-button.menu__close-button= translations.close_menu
+            h3.menu__title!= translations.menu_title
+              small.menu__title-counter= slides.length
+            ul.menu__list
+              each slide, index in slides
+                li.menu__item
+                  .slide-menu-preview
+                    a.slide-menu-preview__link(
+                      href=slide.url)
+
+                      .slide-menu-preview__cover
+                        img.slide-menu-preview__cover-image(
+                          src=slide.cover.format.small)
+
+                      .slide-menu-preview__text
+                        .slide-menu-preview__index=slide.index
+                        h4.slide-menu-preview__title!=slide.title
 
 append base_includes_scripts
   script(type='text/javascript').
