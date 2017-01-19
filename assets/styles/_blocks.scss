@@ -430,8 +430,7 @@
 
   &__text {
     @include grid-column(7, false);
-    margin-left: $h-unit / 2;
-    padding: ($v-unit / 4) 0;
+    padding: ($v-unit / 4) 0  ($v-unit / 4) ($h-unit / 2);
   }
 
   &__title {
