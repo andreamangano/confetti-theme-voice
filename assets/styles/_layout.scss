@@ -4,6 +4,10 @@
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
 
+  &.is-menu-opened {
+    overflow: hidden;
+  }
+
   // &__page {
   // }
 
