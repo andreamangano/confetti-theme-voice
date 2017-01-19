@@ -77,7 +77,7 @@
 
   &__controls {
     @include fixed-bottom;
-    z-index: z(navbar);
+    z-index: z('overthetop');
   }
 
   &__controls-buttons {
@@ -130,5 +130,10 @@
     @include media-query(medium) {
       padding-top: $v-unit;
     }
+  }
+
+  &__menu {
+    position: relative;
+    z-index: z('navbar') + 1;
   }
 }
