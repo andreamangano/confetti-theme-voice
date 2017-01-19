@@ -5,6 +5,8 @@
     z-index: z('navbar');
 
     @include media-query('medium') {
+      // increases the mouse-hover area
+      height: rem-calc(200);
       left: 0;
       position: fixed;
       right: 0;
