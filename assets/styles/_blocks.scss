@@ -398,6 +398,50 @@
     margin: 0;
   }
 }
+
+//-------------------
+// SLIDE MENU PREVIEW
+//-------------------
+.slide-menu-preview {
+
+  &__link {
+    @include grid-row(false);
+    align-items: center;
+    color: $color-neutral-highest;
+    text-decoration: none;
+  }
+
+  &__cover {
+    @include grid-column(5, true);
+    max-width: rem-calc(100);
+    position: relative;
+  }
+
+  &__index {
+    @include moderato;
+    color: $color-neutral-medium;
+    line-height: 1;
+  }
+
+  &__cover-image {
+    display: block;
+    width: 100%;
+  }
+
+  &__text {
+    @include grid-column(7, false);
+    margin-left: $h-unit / 2;
+    padding: ($v-unit / 4) 0;
+  }
+
+  &__title {
+    @include moderato;
+    color: $color-neutral-lowest;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: $v-unit / 4 0 0;
+  }
+}
 //---------------
 // AUTHOR PREVIEW
 //---------------
