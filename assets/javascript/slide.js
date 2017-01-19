@@ -1,4 +1,12 @@
 document.addEventListener('DOMContentLoaded', function() {
+
+  var openMenuButton = document.getElementById('js-open-menu-button');
+  var closeMenuButton = document.getElementById('js-close-menu-button');
+
+  var menuIsOpened = false;
+  var menuIsOpenedClassName = 'is-menu-opened';
+  var body = document.body || document.documentElement;
+
   /*
     Preferred respect to classList because it works cross browsers.
     */
@@ -57,7 +65,22 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
 
-  fixCoverTop();
+  function toggleMenu() {
+    menuIsOpened
+      ? body.removeClassName(menuIsOpenedClassName)
+      : body.addClassName(menuIsOpenedClassName);
+    menuIsOpened = !menuIsOpened;
+  }
 
+  openMenuButton.addEventListener('click', function(event) {
+    event.preventDefault();
+    toggleMenu();
+  });
+  closeMenuButton.addEventListener('click', function(event) {
+    event.preventDefault();
+    toggleMenu();
+  });
+
+  fixCoverTop();
   window.addEventListener('resize', fixCoverTop);
 });
