@@ -13,3 +13,5 @@ published_by: Published by
 start: Start
 go_next_slide: Go to the next slide
 go_prev_slide: Go to the previous slide
+menu_title: Slides
+close_menu: Close
