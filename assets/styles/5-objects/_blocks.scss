@@ -39,7 +39,6 @@
   justify-content: center;
   line-height: 0;
   padding: 0 $h-unit * 2;
-  text-decoration: none;
 
   &:hover {
     box-shadow: 0 0 5px 5px $color-neutral-low;
@@ -198,7 +197,6 @@
     color: currentColor;
     display: flex;
     line-height: 1;
-    text-decoration: none;
     text-transform: uppercase;
   }
 
@@ -268,7 +266,6 @@
     flex-direction: column;
     margin-bottom: $v-unit;
     padding: rem-calc(8);
-    text-decoration: none;
 
     &:hover {
       background-color: $color-primary;
@@ -341,7 +338,6 @@
     border-top: 1px solid $color-neutral-low;
     color: $color-neutral-highest;
     display: block;
-    text-decoration: none;
 
     &:hover {
       color: $color-primary;
@@ -408,7 +404,6 @@
     @include grid-row(false);
     align-items: center;
     color: $color-neutral-highest;
-    text-decoration: none;
   }
 
   &__cover {
@@ -547,7 +542,6 @@
     @include lento;
     color: $color-neutral-medium;
     display: block;
-    text-decoration: none;
 
     @include media-query(medium) {
       color: $color-neutral-lower;

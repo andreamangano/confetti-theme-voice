@@ -87,12 +87,23 @@
 // MENU
 //-----
 .menu {
+  $anim-duration: .2s;
   @include fixed-overlay;
-  height: 1px;
+  height: 0;
   overflow: hidden;
   position: fixed;
+  // trick: allows to see the menu transitions when it is closing
+  transition: width 0s, height 0s, visibility 0s $anim-duration;
   visibility: hidden;
-  width: 1px;
+  width: 0;
+
+  .is-menu-opened & {
+    height: auto;
+    overflow: auto;
+    transition: width 0s, height 0s;
+    visibility: visible;
+    width: auto;
+  }
 
   &__close {
     text-align: right;
@@ -115,12 +126,14 @@
     @include fixed-overlay;
     background-color: rgba($color-neutral-lowest, .8);
     opacity: 0;
-    transition: opacity ease-in-out .2s;
+    transition: opacity ease-in-out $anim-duration;
+    will-change: opacity;
     z-index: 0;
   }
 
   .is-menu-opened &__overlay {
     opacity: 1;
+    transition-duration: $anim-duration;
   }
 
   &__content {
@@ -135,13 +148,15 @@
     opacity: 0;
     padding: 0 $h-unit;
     transform: translateX(-100%);
-    transition: transform ease-in-out .2s, opacity ease-in-out .2s;
+    transition: transform ease-in-out $anim-duration, opacity ease-in-out $anim-duration;
     width: rem-calc(260);
+    will-change: transform, opacity;
   }
 
   .is-menu-opened &__content-wrapper {
     opacity: 1;
     transform: translateX(0);
+    transition-duration: $anim-duration;
   }
 
   &__title {
@@ -170,18 +185,40 @@
   }
 
   &__item {
+    border-bottom: 1px solid $color-neutral-high;
     border-top: 1px solid $color-neutral-high;
+    margin: -1px 0;
     padding: ($v-unit / 2) 0;
+    position: relative;
+
+    &::after {
+      background-color: $color-primary;
+      bottom: 0;
+      content: '';
+      display: none;
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: $h-unit / 4;
+    }
+
+    &.is-selected {
+      background-color: $color-neutral-higher;
+      margin: 0 (-$h-unit);
+      padding-left: $v-unit;
+      padding-right: $v-unit;
+
+      &::after {
+        display: block;
+      }
+    }
 
     &:first-child {
       border-top: 0;
     }
-  }
-}
 
-.is-menu-opened .menu {
-  height: auto;
-  overflow: auto;
-  visibility: visible;
-  width: auto;
+    &:last-child {
+      border-bottom: 0;
+    }
+  }
 }
