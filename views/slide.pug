@@ -116,19 +116,21 @@ block page
             h3.menu__title!= translations.menu_title
               small.menu__title-counter= slides.length
             ul.menu__list
-              each slide, index in slides
-                li.menu__item
+              each _slide, index in slides
+                - var selectedClass = _slide.index == slide.index ? 'is-selected' : ''
+                li.menu__item(
+                  class=selectedClass)
                   .slide-menu-preview
                     a.slide-menu-preview__link(
-                      href=slide.url)
+                      href=_slide.url)
 
                       .slide-menu-preview__cover
                         img.slide-menu-preview__cover-image(
-                          src=slide.cover.format.small)
+                          src=_slide.cover.format.small)
 
                       .slide-menu-preview__text
-                        .slide-menu-preview__index=slide.index
-                        h4.slide-menu-preview__title!=slide.title
+                        .slide-menu-preview__index=_slide.index
+                        h4.slide-menu-preview__title!=_slide.title
 
 append base_includes_scripts
   script(type='text/javascript').
