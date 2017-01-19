@@ -44,25 +44,24 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   };
 
+  function coverTopListener() {
+      var slideCover = document.getElementById('js-slide-image');
+      var scrollTop = document.body.scrollTop || document.documentElement.scrollTop,
+          elementOffset = slideCover.offsetTop,
+          distance = (elementOffset - scrollTop);
+
+      if(distance < 0) {
+        document.body.addClassName('is-slide-top');
+      } else {
+        document.body.removeClassName('is-slide-top');
+      }
+  }
+
   function fixCoverTop() {
     var wiewPortWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-    if(wiewPortWidth < 600) {
-      var slideCover = document.getElementById('js-slide-image');
-
-      window.addEventListener('scroll', function () {
-          var scrollTop = document.body.scrollTop || document.documentElement.scrollTop,
-              elementOffset = slideCover.offsetTop,
-              distance = (elementOffset - scrollTop);
-
-          if(distance < 0) {
-            document.body.addClassName('is-slide-top');
-          } else {
-            document.body.removeClassName('is-slide-top');
-          }
-      });
-    } else {
-      window.removeEventListener('scroll', false);
-    }
+    (wiewPortWidth < 600)
+      ? window.addEventListener('scroll', coverTopListener)
+      : window.removeEventListener('scroll', coverTopListener, false);
   }
 
   function toggleMenu() {
