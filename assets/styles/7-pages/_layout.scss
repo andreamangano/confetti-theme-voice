@@ -12,7 +12,12 @@
   // }
 
   &__footer {
+    border-top: 1px solid $color-neutral-low;
     padding: $v-unit * 1.5 0 $v-unit * 6;
+
+    @include media-query('medium') {
+      border-top: 0;
+    }
   }
 
   &__footer-wrapper {
