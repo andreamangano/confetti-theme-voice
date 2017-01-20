@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
 
-  var openMenuButton = document.getElementById('js-open-menu-button');
-  var closeMenuButton = document.getElementById('js-close-menu-button');
+  var toggleMenuItems = document.getElementsByClassName('js-toggle-menu-button');
 
   var menuIsOpened = false;
   var menuIsOpenedClassName = 'is-menu-opened';
@@ -71,14 +70,12 @@ document.addEventListener('DOMContentLoaded', function() {
     menuIsOpened = !menuIsOpened;
   }
 
-  openMenuButton.addEventListener('click', function(event) {
-    event.preventDefault();
-    toggleMenu();
-  });
-  closeMenuButton.addEventListener('click', function(event) {
-    event.preventDefault();
-    toggleMenu();
-  });
+  for (var i = 0; i < toggleMenuItems.length; i++) {
+    toggleMenuItems[i].addEventListener('click', function(event) {
+      event.preventDefault();
+      toggleMenu();
+    });
+  }
 
   fixCoverTop();
   window.addEventListener('resize', fixCoverTop);

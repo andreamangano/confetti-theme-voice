@@ -47,7 +47,7 @@ block page
                             .controls__text= translations.previous
 
                       .controls__item.controls__item--index
-                        a#js-open-menu-button.controls__link(
+                        a.js-toggle-menu-button.controls__link(
                           href="index.html#table-contents")
                           .controls__icon.icon
                             include ./../assets/images/icons/slides.svg
@@ -106,13 +106,12 @@ block page
 
     .slide-page__menu
       .menu
-        .menu__overlay(
-        for="hidden-menu-input")
+        .js-toggle-menu-button.menu__overlay
 
         .menu__content
           .menu__content-wrapper
             .menu__close
-              button#js-close-menu-button.menu__close-button= translations.close_menu
+              button.js-toggle-menu-button.menu__close-button= translations.close_menu
             h3.menu__title!= translations.menu_title
               small.menu__title-counter= slides.length
             ul.menu__list
