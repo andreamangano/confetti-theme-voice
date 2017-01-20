@@ -408,12 +408,19 @@
 
   &__cover {
     @include grid-column(5, true);
-    max-width: rem-calc(100);
     position: relative;
   }
 
+  &__title,
   &__index {
     @include moderato;
+
+    @include media-query('large') {
+      @include adagio;
+    }
+  }
+
+  &__index {
     color: $color-neutral-medium;
     line-height: 1;
   }
@@ -429,9 +436,8 @@
   }
 
   &__title {
-    @include moderato;
     color: $color-neutral-lowest;
-    font-weight: 700;
+    font-weight: bold;
     line-height: 1.2;
     margin: $v-unit / 4 0 0;
   }

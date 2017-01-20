@@ -151,6 +151,10 @@
     transition: transform ease-in-out $anim-duration, opacity ease-in-out $anim-duration;
     width: rem-calc(260);
     will-change: transform, opacity;
+
+    @include media-query('large') {
+      width: rem-calc(400);
+    }
   }
 
   .is-menu-opened &__content-wrapper {
