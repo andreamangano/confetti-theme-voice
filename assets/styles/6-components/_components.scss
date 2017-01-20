@@ -125,6 +125,7 @@
   &__overlay {
     @include fixed-overlay;
     background-color: rgba($color-neutral-lowest, .8);
+    cursor: pointer;
     opacity: 0;
     transition: opacity ease-in-out $anim-duration;
     will-change: opacity;
@@ -139,6 +140,7 @@
   &__content {
     @include fixed-overlay;
     overflow-y: auto;
+    right: auto;
     z-index: 1;
   }
 
@@ -172,6 +174,10 @@
     margin: 0;
     padding: $v-unit 0;
     text-transform: uppercase;
+
+    // @include media-query('huge') {
+    //   @include larghissimo;
+    // }
   }
 
   &__title-counter {
@@ -189,14 +195,14 @@
   }
 
   &__item {
-    border-bottom: 1px solid $color-neutral-high;
-    border-top: 1px solid $color-neutral-high;
+    border-bottom: 1px solid $color-neutral-higher;
+    border-top: 1px solid $color-neutral-higher;
     margin: -1px 0;
     padding: ($v-unit / 2) 0;
     position: relative;
 
     @include media-query('huge') {
-      padding: $v-unit 0;
+      padding: ($v-unit * .75) 0;
     }
 
     &::after {
@@ -227,6 +233,10 @@
 
     &:last-child {
       border-bottom: 0;
+    }
+
+    &:not(.is-selected):hover {
+      background-color: lighten($color-neutral-highest, 4%);
     }
   }
 }
