@@ -53,7 +53,7 @@
     padding: $v-unit ($column-gutter / 2) ($v-unit * 2);
 
     @include media-query(medium) {
-      padding: ($v-unit * 2) ($column-gutter / 2) ($v-unit * 3);
+      padding: ($v-unit * 2) ($column-gutter / 2) ($v-unit * 5);
     }
   }
 
