@@ -21,12 +21,7 @@ $h-unit: rem-calc(16);
 
 // Fonts
 $base-font-family: 'Lato', sans-serif;
-
-// Wrappers
-$layout-wrapper: rem-calc(960);
-$layout-wrapper-large: rem-calc(1100);
-
-$layout-wrapper-sizes: ('medium': 960, 'large': 1100, 'xlarge': 1200);
+$layout-wrapper-sizes: ('medium': 960, 'large': 1100, 'xlarge': 1300);
 
 $layout-slide-wrapper: rem-calc(900);
 
@@ -35,7 +30,7 @@ $layout-slide-wrapper: rem-calc(900);
 
 $debug: false;
 $use-dry: false;
-$row-width: $layout-wrapper;
+// $row-width: $layout-wrapper;
 $column-gutter: rem-calc(32);
 //- $rem-base: 16px;
 $breakpoints: (
