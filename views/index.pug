@@ -23,7 +23,7 @@ block page
 
                 //- Author picture
                 if author.picture
-                  .hero__author-picture
+                  picture.hero__author-picture
                     img.hero__author-picture-image(
                       src=paths.to.deckImages + author.picture)
 
@@ -109,7 +109,7 @@ block page
 
                     //- Picture
                     if author.picture
-                      .author__picture
+                      picture.author__picture
                         img.author__picture-image(
                           src=paths.to.deckImages + author.picture)
 
@@ -170,7 +170,7 @@ block page
                         a.slide-preview__link(
                           href=slide.url)
 
-                          .slide-preview__cover
+                          picture.slide-preview__cover
                             .slide-preview__cover-overlay
                             .slide-preview__index=slide.index
 
