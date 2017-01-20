@@ -105,21 +105,37 @@
     width: auto;
   }
 
-  &__close {
-    text-align: right;
+  &__header {
+    @include larghetto;
+    align-items: center;
+    border-bottom: 2px solid $color-neutral-high;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 (-$h-unit);
+    padding: $v-unit $h-unit;
+
+    @include media-query('huge') {
+      padding: ($v-unit * 2) $h-unit;
+    }
   }
 
+  &__index-button,
   &__close-button {
-    @include moderato;
+    align-items: center;
     background: none;
     border: 0;
-    color: $color-neutral-lowest;
+    color: $color-neutral-low;
     cursor: pointer;
-    display: inline-block;
-    line-height: 1;
-    margin: $v-unit 0 0;
+    display: flex;
+    line-height: 0;
+    margin: 0;
     padding: 0;
-    text-transform: uppercase;
+  }
+
+  &__close-button-icon {
+    line-height: 0;
+    margin-right: ($h-unit / 2);
+    width: rem-calc(12);
   }
 
   &__overlay {
@@ -166,13 +182,13 @@
   }
 
   &__title {
-    @include larghetto;
+    @include largo;
     align-items: center;
     color: $color-neutral-lowest;
     display: flex;
     line-height: 1;
     margin: 0;
-    padding: $v-unit 0;
+    padding: ($v-unit * 1.5) 0;
     text-transform: uppercase;
 
     // @include media-query('huge') {
@@ -183,6 +199,7 @@
   &__title-counter {
     background-color: $color-primary;
     border-radius: 5px;
+    font-size: 80%;
     line-height: 1;
     margin-left: $h-unit / 2;
     padding: rem-calc(2) ($h-unit / 2);

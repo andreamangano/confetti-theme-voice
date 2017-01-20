@@ -110,10 +110,18 @@ block page
 
         .menu__content
           .menu__content-wrapper
-            .menu__close
-              button.js-toggle-menu-button.menu__close-button= translations.close_menu
+            .menu__header
+
+              a.menu__index-button(href="index.html")
+                = translations.back_intro
+
+              button.js-toggle-menu-button.menu__close-button
+                .menu__close-button-icon
+                  include ./../assets/images/icons/close.svg
+                = translations.close_menu
+
             h3.menu__title!= translations.menu_title
-              small.menu__title-counter= slides.length
+              .menu__title-counter= slides.length
             ul.menu__list
               each _slide, index in slides
                 - var selectedClass = _slide.index == slide.index ? 'is-selected' : ''
