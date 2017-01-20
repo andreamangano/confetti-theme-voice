@@ -23,6 +23,10 @@
     margin: 0 auto;
     max-width: $layout-wrapper;
     padding: 0 $h-unit;
+
+    @include media-query('large') {
+      max-width: $layout-wrapper-large;
+    }
    }
 
   &__header-wrapper {

@@ -24,7 +24,7 @@
   &__content {
     @include grid-row(false);
     justify-content: space-between;
-    max-width: auto;
+    max-width: 100%;
   }
 
   &__item {
