@@ -38,10 +38,21 @@ html(lang=lang)
     footer.layout__footer(role="contentinfo")
       // Support Confetti, don't remove the Copyright :)
       .layout__footer-wrapper
-        = "Generated with "
-        a(href="https://github.com/andreamangano/confetti-cli")
-          strong Confetti
-        != "&copy;, an open source project from <strong>Italy</strong>."
+        .footer
+          .footer__content
+            .footer__copy
+              p.footer__text
+                = "Generated with "
+                a(href="https://github.com/andreamangano/confetti-cli")
+                  strong Confetti
+                != "&copy;,"
+                br
+                | an open source project from <strong>Italy</strong>.
+            .footer__theme
+              p.footer__text
+                = "Theme "
+                a(href="https://github.com/andreamangano/confetti-theme-voice")
+                  strong Voice
 
     block base_includes_scripts
 
