@@ -89,13 +89,7 @@
     box-shadow: 0 0 rem-calc(10) rgba($color-neutral-highest, .2);
   }
 
-  &__cover {
-    margin: 0 (-$column-gutter / 2);
-
-    @include media-query('large') {
-      margin: 0;
-    }
-  }
+  // &__cover {}
 
   &__cover-image,
   &__cover-hidden-image {
