@@ -124,8 +124,8 @@
   }
 
   &__info-wrapper {
+    @include responsive-wrapper($layout-wrapper-sizes);
     margin: 0 auto;
-    max-width: $layout-wrapper;
     padding: $v-unit * 3 $h-unit;
     position: relative;
 

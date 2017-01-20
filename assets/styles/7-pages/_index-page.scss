@@ -1,8 +1,8 @@
 .index-page {
 
   &__content {
+    @include responsive-wrapper($layout-wrapper-sizes);
     margin: 0 auto;
-    max-width: $layout-wrapper;
     padding: 0 $h-unit;
   }
 
@@ -24,8 +24,8 @@
   }
 
   &__secondary-wrapper {
+    @include responsive-wrapper($layout-wrapper-sizes);
     margin: 0 auto;
-    max-width: $layout-wrapper;
     padding: 0 $h-unit;
   }
 

@@ -6,6 +6,14 @@
   }
 }
 
+@mixin responsive-wrapper($wrapper-sizes) {
+  @each $media, $value in $wrapper-sizes {
+    @include media-query($media) {
+      max-width: rem-calc($value);
+    }
+  }
+}
+
 // h1
 @mixin larghissimo {
   $font-size: ('xxsmall': 30, 'medium': 34, 'large': 42);
