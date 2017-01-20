@@ -531,7 +531,6 @@
   &__cover {
     @include grid-column(0, true);
     display: none;
-    margin-left: (-$column-gutter / 2);
     padding-right: $h-unit;
 
     @include media-query(medium) {
@@ -581,7 +580,7 @@
   }
 
   &__counter {
-    padding: ($v-unit * .75) 0 ($v-unit * .75) $h-unit;
+    padding: ($v-unit * .75) $h-unit;
   }
 
   &__counter-value {
