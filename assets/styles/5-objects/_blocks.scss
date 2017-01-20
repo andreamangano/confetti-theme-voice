@@ -490,6 +490,32 @@
       @include andante;
     }
   }
+
+  &__links {
+    margin-top: $v-unit;
+  }
+
+  // &__links-title {}
+
+  &__links-list {
+    margin-top: $v-unit;
+  }
+
+  &__link {
+    @include moderato;
+    align-items: center;
+    display: flex;
+    letter-spacing: 1px;
+    margin-right: $h-unit;
+    margin-top: $v-unit / 2;
+    text-transform: uppercase;
+  }
+
+  &__link-icon {
+    line-height: 0;
+    margin-right: $h-unit / 2;
+    width: rem-calc(20);
+  }
 }
 //-------------
 // DECK PREVIEW

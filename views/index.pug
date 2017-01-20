@@ -126,7 +126,23 @@ block page
                   if author.description
                     .author__description!= author.description
 
-            //- TODO: add author links
+                  if author.links
+                    .author__links
+                      .label.author__links-title!= translations.authorLinks
+                      .author__links-list
+                        each link in author.links
+                          a.author__link(
+                            href=link.url
+                            title=link.title)
+                            .author__link-icon
+                              span.icon
+                                if link.type == 'github'
+                                  include ./../assets/images/icons/github.svg
+                                else if link.type == 'twitter'
+                                  include ./../assets/images/icons/twitter.svg
+                                else
+                                  include ./../assets/images/icons/link.svg
+                            span=link.title
 
         .index-page__secondary
           .index-page__secondary-wrapper
