@@ -22,9 +22,9 @@
 
   &__footer-wrapper {
     @include moderato;
+    @include responsive-wrapper($layout-wrapper-sizes);
     color: $color-neutral-medium-high;
     margin: 0 auto;
-    max-width: $layout-wrapper;
     padding: 0 $h-unit;
   }
 }

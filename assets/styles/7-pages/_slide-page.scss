@@ -20,13 +20,9 @@
 
   &__header-wrapper,
   &__main-header-wrapper {
+    @include responsive-wrapper($layout-wrapper-sizes);
     margin: 0 auto;
-    max-width: $layout-wrapper;
     padding: 0 $h-unit;
-
-    @include media-query('large') {
-      max-width: $layout-wrapper-large;
-    }
    }
 
   &__header-wrapper {
@@ -83,6 +79,8 @@
 
   &__controls {
     @include fixed-bottom;
+    @include responsive-wrapper($layout-wrapper-sizes);
+    margin: 0 auto;
     z-index: z('overthetop');
   }
 
@@ -93,6 +91,10 @@
 
   &__cover {
     margin: 0 (-$column-gutter / 2);
+
+    @include media-query('large') {
+      margin: 0;
+    }
   }
 
   &__cover-image,
