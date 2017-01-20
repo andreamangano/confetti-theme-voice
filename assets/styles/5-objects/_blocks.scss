@@ -531,7 +531,6 @@
   &__cover {
     @include grid-column(0, true);
     display: none;
-    padding-right: $h-unit;
 
     @include media-query(medium) {
       display: flex;
@@ -550,7 +549,7 @@
   &__info {
     @include grid-column(auto, true);
     justify-content: center;
-    padding: ($v-unit * .75) ($h-unit * .75) ($v-unit * .75) 0;
+    padding: ($v-unit * .75);
   }
 
   &__author {
