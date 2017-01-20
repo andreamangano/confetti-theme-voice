@@ -415,7 +415,7 @@
   &__index {
     @include moderato;
 
-    @include media-query('large') {
+    @include media-query('huge') {
       @include adagio;
     }
   }
@@ -432,7 +432,11 @@
 
   &__text {
     @include grid-column(7, false);
-    padding: ($v-unit / 4) 0  ($v-unit / 4) ($h-unit / 2);
+    padding: ($v-unit / 4) 0 ($v-unit / 4) ($h-unit / 2);
+
+    @include media-query('large') {
+      padding-left: $h-unit;
+    }
   }
 
   &__title {

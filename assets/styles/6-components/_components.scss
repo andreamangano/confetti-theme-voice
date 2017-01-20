@@ -152,7 +152,7 @@
     width: rem-calc(260);
     will-change: transform, opacity;
 
-    @include media-query('large') {
+    @include media-query('huge') {
       width: rem-calc(400);
     }
   }
@@ -194,6 +194,10 @@
     margin: -1px 0;
     padding: ($v-unit / 2) 0;
     position: relative;
+
+    @include media-query('huge') {
+      padding: $v-unit 0;
+    }
 
     &::after {
       background-color: $color-primary;
