@@ -11,20 +11,11 @@
   // &__page {
   // }
 
-  &__footer {
-    border-top: 1px solid $color-neutral-low;
-    padding: $v-unit * 1.5 0 $v-unit * 6;
-
-    @include media-query('medium') {
-      border-top: 0;
-    }
-  }
+  // &__footer {
+  // }
 
   &__footer-wrapper {
-    @include moderato;
     @include responsive-wrapper($layout-wrapper-sizes);
-    color: $color-neutral-medium-high;
     margin: 0 auto;
-    padding: 0 $h-unit;
   }
 }
