@@ -282,83 +282,26 @@
     text-transform: uppercase;
   }
 }
-//------------------
-// TABLE OF CONTENTS
-//------------------
-.table-contents {
-  padding-bottom: $v-unit;
 
-  &__title {
-    align-items: baseline;
-    display: flex;
-    line-height: 1;
-    margin: 0;
-    padding-top: $v-unit;
-    position: relative;
-  }
-
-  &__detail {
-    @include andante;
-    align-items: center;
-    color: $color-neutral-medium-high;
-    display: flex;
-    line-height: 1;
-    margin-top: $v-unit;
-  }
-
-  &__detail-text,
-  &__detail-icon {
-    margin-right: $h-unit / 2;
-  }
-
-  &__detail-evidence {
-    margin-right: $h-unit / 4;
-  }
-
-  &__list {
-    @include grid-row(false);
-    list-style: none;
-    margin: $v-unit (-$h-unit / 2) 0;
-    padding: 0;
-    width: auto;
-  }
-
-  &__item {
-    @include grid-column((xxsmall: 6, small: 4, medium: 3, xlarge: 2), true);
-    padding: 0 $h-unit / 2;
-  }
-}
 //--------------
 // SLIDE PREVIEW
 //--------------
 .slide-preview {
-  margin-top: $v-unit / 2;
+  background-color: $color-neutral-lowest;
 
   &__link {
     border-top: 1px solid $color-neutral-low;
     color: $color-neutral-highest;
     display: block;
+    transition: box-shadow ease-in-out .2s;
 
     &:hover {
-      color: $color-primary;
+      box-shadow: 0 0 rem-calc(8) rgba($color-neutral-high, .3);
     }
   }
 
   &__cover {
     position: relative;
-  }
-
-  &__cover-overlay {
-    bottom: 0;
-    box-shadow: inset 0 0 3px 3px rgba($color-neutral-medium-high, .2);
-    left: 0;
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
-
-  &__link:hover &__cover-overlay {
-    box-shadow: inset 0 0 5px 5px rgba($color-neutral-medium-high, .4);
   }
 
   &__index {
@@ -383,15 +326,25 @@
   }
 
   &__text {
-    padding: ($v-unit * .75) rem-calc(2);
+    border: 1px solid $color-neutral-low;
+    border-top: 0;
+    padding: ($v-unit / 2) ($h-unit / 2);
   }
 
   &__title {
-    @include andante;
+    @include moderato;
     color: $color-neutral-high;
     font-weight: 700;
-    line-height: 1.2;
+    height: 2 * $v-unit;
+    line-height: $v-unit;
     margin: 0;
+    overflow: hidden;
+
+    @include media-query('small') {
+      @include andante;
+      height: 3 * $v-unit * 1.2;
+      line-height: $v-unit * 1.2;
+    }
   }
 }
 
@@ -413,7 +366,11 @@
 
   &__title,
   &__index {
-    @include andante;
+    @include moderato;
+
+    @include media-query('small') {
+      @include andante;
+    }
 
     @include media-query('huge') {
       @include adagio;
@@ -517,7 +474,7 @@
     display: flex;
     letter-spacing: 1px;
     margin-right: $h-unit;
-    margin-top: $v-unit / 2;
+    padding: $v-unit / 2 0;
     text-transform: uppercase;
   }
 
