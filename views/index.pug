@@ -1,7 +1,7 @@
 extends layout
 
 block page
-  - var coverStyle = cover ? "background-image: url(" + paths.to.deckImages + cover + ");" : ""
+  - var coverStyle = cover ? "background-image: url(" + cover.format.original + ");" : ""
   - var slidesTranslations = slides.length > 1 ? translations.slides : translations.slide
 
   .index-page
@@ -171,7 +171,6 @@ block page
                           href=slide.url)
 
                           .slide-preview__cover
-                            .slide-preview__cover-overlay
                             .slide-preview__index=slide.index
 
                             img.slide-preview__cover-image(
