@@ -413,7 +413,7 @@
 
   &__title,
   &__index {
-    @include moderato;
+    @include andante;
 
     @include media-query('huge') {
       @include adagio;

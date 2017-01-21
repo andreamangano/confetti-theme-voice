@@ -129,7 +129,6 @@
     display: flex;
     line-height: 1;
     margin: 0;
-    padding: 0;
     padding: $v-unit $h-unit;
   }
 
@@ -170,8 +169,12 @@
     width: rem-calc(260);
     will-change: transform, opacity;
 
+    @include media-query('large') {
+      width: rem-calc(350);
+    }
+
     @include media-query('huge') {
-      width: rem-calc(400);
+      width: rem-calc(450);
     }
   }
 
