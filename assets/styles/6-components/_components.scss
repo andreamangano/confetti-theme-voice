@@ -272,3 +272,51 @@
     }
   }
 }
+//------------------
+// TABLE OF CONTENTS
+//------------------
+.table-contents {
+  padding-bottom: $v-unit;
+
+  &__title {
+    @include largo;
+    align-items: baseline;
+    display: flex;
+    line-height: 1;
+    margin: 0;
+    padding-top: $v-unit;
+    position: relative;
+  }
+
+  &__detail {
+    @include andante;
+    align-items: center;
+    color: $color-neutral-medium-high;
+    display: flex;
+    line-height: 1;
+    margin-top: $v-unit;
+  }
+
+  &__detail-text,
+  &__detail-icon {
+    margin-right: $h-unit / 2;
+  }
+
+  &__detail-evidence {
+    margin-right: $h-unit / 4;
+  }
+
+  &__list {
+    @include grid-row(false);
+    list-style: none;
+    margin: $v-unit (-$h-unit / 2) 0;
+    padding: 0;
+    width: auto;
+  }
+
+  &__item {
+    @include grid-column((xxsmall: 6, small: 4, medium: 3, xlarge: 2), true);
+    margin-top: $v-unit;
+    padding: 0 $h-unit / 2;
+  }
+}
