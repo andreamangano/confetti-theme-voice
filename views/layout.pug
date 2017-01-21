@@ -7,8 +7,19 @@ html(lang=lang)
     block meta_title
       title!= meta.title
 
-    if meta.description
-      meta(name="description" content=meta.description)
+    block meta_description
+      if meta.description
+        meta(
+          name="description"
+          content=meta.description)
+
+    meta(
+      name="author"
+      content=author.name)
+
+    meta(
+      name="keywords"
+      content=meta.keywords.join(','))
 
     meta(
       name="viewport"
@@ -18,7 +29,7 @@ html(lang=lang)
     meta(charset="utf-8")
     meta(http-equiv="X-UA-Compatible" content="IE=edge")
 
-    // Set baseUrl to release_prefix because the deck folder could be a domain subdirectory.
+    //- Set baseUrl to release_prefix because the deck folder could be a domain subdirectory.
     base(href=release_prefix)
 
     link(
