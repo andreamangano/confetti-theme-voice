@@ -135,7 +135,7 @@
   &__close-button-icon {
     line-height: 0;
     margin-right: ($h-unit / 2);
-    width: rem-calc(12);
+    width: rem-calc(14);
   }
 
   &__overlay {
@@ -186,10 +186,10 @@
     align-items: center;
     color: $color-neutral-lowest;
     display: flex;
+    font-weight: normal;
     line-height: 1;
     margin: 0;
     padding: ($v-unit * 1.5) 0;
-    text-transform: uppercase;
 
     // @include media-query('huge') {
     //   @include larghissimo;
@@ -197,12 +197,9 @@
   }
 
   &__title-counter {
-    background-color: $color-primary;
-    border-radius: 5px;
-    font-size: 80%;
+    color: $color-primary;
     line-height: 1;
-    margin-left: $h-unit / 2;
-    padding: rem-calc(2) ($h-unit / 2);
+    margin-right: $h-unit / 2;
   }
 
   &__list {

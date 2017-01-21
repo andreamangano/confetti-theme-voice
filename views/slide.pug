@@ -116,12 +116,13 @@ block page
                 = translations.back_intro
 
               button.js-toggle-menu-button.menu__close-button
-                .menu__close-button-icon
+                span.menu__close-button-icon
                   include ./../assets/images/icons/close.svg
-                = translations.close_menu
+                //- = translations.close_menu
 
-            h3.menu__title!= translations.menu_title
+            h3.menu__title
               .menu__title-counter= slides.length
+              != translations.menu_title
             ul.menu__list
               each _slide, index in slides
                 - var selectedClass = _slide.index == slide.index ? 'is-selected' : ''
