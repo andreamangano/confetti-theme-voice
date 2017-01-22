@@ -558,7 +558,7 @@
 
 .footer {
   border-top: 1px solid $color-neutral-low;
-  padding: ($v-unit * 1.5) $h-unit ($v-unit * 6);
+  padding: ($v-unit * 1.5) 0 ($v-unit * 6);
 
   &__content {
     @include grid-row();

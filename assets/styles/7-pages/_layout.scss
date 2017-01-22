@@ -17,5 +17,6 @@
   &__footer-wrapper {
     @include responsive-wrapper($layout-wrapper-sizes);
     margin: 0 auto;
+    padding: 0 $h-unit;
   }
 }
