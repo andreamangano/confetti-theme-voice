@@ -5,7 +5,7 @@ html(lang=lang)
   head
 
     block meta_title
-      title!= meta.title
+      title= meta.title
 
     block meta_description
       if meta.description
@@ -41,13 +41,34 @@ html(lang=lang)
       href="https://fonts.googleapis.com/css?family=Lato:400,700"
       rel="stylesheet")
 
+    //- Twitter meta tags (format type: card)
+    meta(
+      name="twitter:card"
+      content="summary_large_image")
+
+    meta(
+      name="twitter:title"
+      content=meta.title)
+
+    meta(
+      name="twitter:description"
+      content=meta.description)
+
+    //-
+      - var twitterImage = cover ? cover.format.original : slides[0].cover.format.orginal
+      meta(
+        name="twitter:image"
+        content=twitterImage)
+
+    //- TODO: add twitter author
+
   body.layout
 
     .layout__page
       block page
 
     footer.layout__footer(role="contentinfo")
-      // Support Confetti, don't remove the Copyright :)
+      //- Support Confetti, don't remove the Copyright :)
       .layout__footer-wrapper
         .footer
           .footer__content
