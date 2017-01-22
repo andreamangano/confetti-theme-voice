@@ -1,7 +1,7 @@
 extends layout
 
 block page
-  - var coverStyle = cover ? "background-image: url(" + cover.format.original + ");" : ""
+  - var coverStyle = cover ? "background-image: url(" + cover.format.large + ");" : ""
   - var slidesTranslations = slides.length > 1 ? translations.slides : translations.slide
 
   .index-page
