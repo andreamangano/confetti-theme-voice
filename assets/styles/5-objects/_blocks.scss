@@ -578,7 +578,7 @@
   }
 
   &__logo {
-    max-width: rem-calc(90);
+    width: rem-calc(90);
 
     &:hover {
       color: $color-neutral-high;
