@@ -73,12 +73,15 @@ html(lang=lang)
         .footer
           .footer__content
             .footer__copy
+              a.footer__logo(
+                href="https://github.com/andreamangano/confetti-cli")
+                include ./../assets/images/icons/confetti.svg
               p.footer__text
                 = "Generated with "
-                a(href="https://github.com/andreamangano/confetti-cli")
+                a(
+                  href="https://github.com/andreamangano/confetti-cli")
                   strong Confetti
                 != "&copy;,"
-                br
                 | an open source project from <strong>Italy</strong>.
             .footer__theme
               p.footer__text

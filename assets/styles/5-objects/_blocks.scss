@@ -577,6 +577,14 @@
     }
   }
 
+  &__logo {
+    max-width: rem-calc(90);
+
+    &:hover {
+      color: $color-neutral-high;
+    }
+  }
+
   &__text {
     @include andante;
     line-height: 1.2;
