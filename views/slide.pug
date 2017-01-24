@@ -3,6 +3,16 @@ extends layout
 block meta_title
   title= slide.title
 
+block twitter_title
+  meta(
+    name="twitter:title"
+    content=slide.title)
+
+block twitter_description
+  meta(
+    name="twitter:description"
+    content=truncate(stripHTMLTags(slide.description), 145))
+
 block page
   .slide-page
 
