@@ -2,6 +2,19 @@ doctype html
 
 html(lang=lang)
 
+  //- Truncates text avoiding to break the words
+  - function truncate(text, maxLength) {
+  -   if(text.length <= maxLength) return text;
+  -   return text.substr(0, text.lastIndexOf(' ', maxLength)) + '...';}
+
+  //- Strips HTML tags
+  - function stripHTMLTags(text) {
+  -   return text.replace(/<(?:.|\n)*?>/gm, '');}
+
+  //- Truncate a generic array
+  - function truncateArray(array, maxLength) {
+  -   return array.length(maxLength);}
+
   head
 
     block meta_title
@@ -46,13 +59,15 @@ html(lang=lang)
       name="twitter:card"
       content="summary_large_image")
 
-    meta(
-      name="twitter:title"
-      content=meta.title)
+    block twitter_title
+      meta(
+        name="twitter:title"
+        content=meta.title)
 
-    meta(
-      name="twitter:description"
-      content=meta.description)
+    block twitter_description
+      meta(
+        name="twitter:description"
+        content=meta.description)
 
     //-
       - var twitterImage = cover ? cover.format.large : slides[0].cover.format.orginal
